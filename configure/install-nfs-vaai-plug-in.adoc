@@ -1,0 +1,57 @@
+---
+permalink: configure/install-nfs-vaai-plug-in.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Você pode instalar o plug-in NetApp NFS para VMware vStorage APIs para integração de array (VAAI) usando as ferramentas do ONTAP para VMware vSphere.' 
+---
+= Instale o plug-in NFS VAAI
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O plug-in NFS vStorage API for Array Integration (NFS VAAI) é um componente de software que integra os storage arrays VMware vSphere e NFS. Instale o plug-in NFS VAAI usando as ferramentas do ONTAP para VMware vSphere a fim de aproveitar os recursos avançados do seu storage array NFS para descarregar determinadas operações relacionadas ao storage dos hosts ESXi para o próprio storage array.
+
+.Antes de começar
+* Baixe o https://mysupport.netapp.com/site/products/all/details/nfsplugin-vmware-vaai/downloads-tab["Plug-in NFS do NetApp para VMware VAAI"] pacote de instalação.
+* Verifique se você tem o patch mais recente do host ESXi 7.0U3 ou versões posteriores e o ONTAP 9.14.1 ou versões posteriores.
+* Montar um armazenamento de dados NFS.
+* Defina os valores das configurações do host DataMover.HardwareAcceleratedMove, DataMover.HardwareAcceleratedInit e VMFS3.HardwareAcceleratedLocking como "1". Para definir esses valores automaticamente, aplique as configurações recomendadas do host EXSi. link:../configure/configure-esx-server-multipath-and-timeout-settings.html["Configure as configurações multipath e timeout do servidor ESXi"]Consulte a .
+* Ative a opção vstorage na máquina virtual de armazenamento (SVM) usando o comando vserver nfs MODIY -vserver vserver_name -vstorage enabled.
+* Certifique-se de ter as versões de patch mais recentes do vSphere 7.0U3.
+* O vSphere 8.x é compatível com o plug-in NetApp NFS VAAI 2,0.1(compilação 16).
+
+
+.Passos
+. Faça login no cliente vSphere
+. Selecione *Atalhos* > *Ferramentas do NetApp ONTAP* na seção plug-ins.
+. Selecione *Settings* > *NFS VAAI Tools*.
+. Quando o plug-in VAAI for carregado no vCenter Server, selecione *alterar* na seção *versão existente*. Se um plug-in VAAI não for carregado para o vCenter Server, selecione o botão *Upload*.
+. Navegue e selecione o `.vib` arquivo e selecione *Upload* para carregar o arquivo para as ferramentas do ONTAP.
+. Selecione *Instalar no host ESXI*, selecione o host ESXi no qual você deseja instalar o plug-in NFS VAAI e, em seguida, selecione *Instalar*.
++
+Somente os hosts ESXi elegíveis para a instalação do plug-in são exibidos. Você pode monitorar o progresso da instalação na seção tarefas recentes do vSphere Web Client.
+
+. Você deve reiniciar manualmente o host ESXi depois que a instalação terminar.
++
+Quando o administrador do VMware reinicia o host ESXi, as ferramentas do ONTAP para VMware vSphere detectam e ativam automaticamente o plug-in NFS VAAI.
+
+
+
+.O que se segue?
+Depois de instalar o plug-in NFS VAAI e reiniciar seu host ESXi, você precisa configurar as políticas de exportação NFS corretas para a descarga de cópia VAAI. Ao configurar o VAAI em um ambiente NFS, configure as regras de política de exportação com os seguintes requisitos em mente:
+
+* O volume ONTAP relevante precisa permitir chamadas NFSv4.
+* O usuário raiz deve permanecer como root e NFSv4 deve ser permitido em todos os volumes pai de junção.
+* A opção de suporte VAAI precisa ser definida no servidor NFS relevante.
+
+
+Para obter mais informações sobre o procedimento, consulte https://kb.netapp.com/on-prem/ontap/DM/VAAI/VAAI-KBs/Configure_the_correct_NFS_export_policies_for_VAAI_copy_offload["Configurar as políticas de exportação de NFS corretas para descarga de cópia VAAI"] o artigo da KB.
+
+.Informações relacionadas
+https://docs.netapp.com/us-en/ontap/nfs-admin/support-vmware-vstorage-over-nfs-concept.html["Suporte para VMware vStorage sobre NFS"]
+
+https://docs.netapp.com/us-en/ontap/nfs-admin/enable-disable-nfsv40-task.html["Ativar ou desativar NFSv4,0"]
+
+https://docs.netapp.com/us-en/ontap/nfs-admin/ontap-support-nfsv42-concept.html#nfs-v4-2-security-labels["Suporte ONTAP para NFSv4,2"]

@@ -1,0 +1,28 @@
+---
+permalink: manage/migrate-standard-virtual-machines-to-vvols-datastores.html 
+sidebar: sidebar 
+keywords: Migrate NFS and VMFS virtual machines 
+summary: 'Você pode migrar máquinas virtuais de datastores NFS e VMFS para datastores de volumes virtuais (vVols) para aproveitar o gerenciamento de VM baseado em políticas e outros recursos do vVols. Os datastores vVols permitem que você atenda a requisitos de carga de trabalho maiores.' 
+---
+= Migre máquinas virtuais com datastores NFS e VMFS para armazenamentos de dados vVols
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+É possível migrar máquinas virtuais de datastores NFS e VMFS para armazenamentos de dados de volumes virtuais (vVols) para aproveitar o gerenciamento de VM baseado em políticas e outros recursos do vVols. Os datastores do vVols permitem que você atenda a requisitos maiores de workload.
+
+.Antes de começar
+Certifique-se de que o Fornecedor VASA não está em execução em nenhuma das máquinas virtuais que pretende migrar. Se você migrar uma máquina virtual que esteja executando o VASA Provider para um datastore vVols, não será possível executar nenhuma operação de gerenciamento, incluindo a ativação das máquinas virtuais que estão nos datastores vVols.
+
+*Sobre esta tarefa*
+
+Quando você migra de um datastore NFS e VMFS para um datastore vVols, o vCenter Server usa descarregamentos de APIs do vStorage para Array Integration (VAAI) ao mover dados de datastores VMFS, mas não de um arquivo VMDK NFS. As descargas VAAI normalmente reduzem a carga no host.
+
+.Passos
+. Clique com o botão direito do rato na máquina virtual que pretende migrar e selecione *migrar*.
+. Selecione *Change storage only* (alterar apenas armazenamento) e, em seguida, selecione *Next* (seguinte).
+. Selecione um formato de disco virtual, uma Política de armazenamento de VM e um datastore da evolução que corresponda aos recursos do datastore que você está migrando.
+. Revise as configurações e selecione *Finish*.
+

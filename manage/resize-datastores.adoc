@@ -1,0 +1,25 @@
+---
+permalink: manage/resize-datastores.html 
+sidebar: sidebar 
+keywords:  
+summary: O redimensionamento de um datastore permite aumentar o armazenamento de seus arquivos de máquina virtual. Você pode alterar o tamanho de um armazenamento de dados conforme os requisitos de infraestrutura mudam. 
+---
+= Redimensione o armazenamento de dados NFS e VMFS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+O redimensionamento de um datastore permite aumentar o armazenamento de seus arquivos de máquina virtual. Você pode alterar o tamanho de um armazenamento de dados conforme os requisitos de infraestrutura mudam.
+
+*Sobre esta tarefa*
+
+Você só pode aumentar o tamanho de um datastores NFS e VMFS. Um FlexVol volume que faz parte de um datastores NFS e VMFS não pode diminuir abaixo do tamanho existente, mas pode crescer no máximo 120%.
+
+.Passos
+. Na página inicial do vSphere Client, selecione *hosts and clusters*.
+. No painel de navegação, selecione o data center que contém o datastore.
+. Clique com o botão direito do Mouse no datastore NFS ou VMFS e selecione *Ferramentas NetApp ONTAP* > *Redimensionar datastore*.
+. Na caixa de diálogo Redimensionar, especifique um novo tamanho para o datastore e selecione *OK*.
+

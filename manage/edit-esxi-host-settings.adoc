@@ -1,0 +1,35 @@
+---
+permalink: manage/edit-esxi-host-settings.html 
+sidebar: sidebar 
+keywords:  
+summary: Você pode usar o painel das ferramentas do ONTAP para o VMware vSphere para editar as configurações do host ESXi. 
+---
+= Modifique as configurações do host ESXi usando as ferramentas do ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode usar o painel das ferramentas do ONTAP para o VMware vSphere para editar as configurações do host ESXi.
+
+.Antes de começar
+Se houver um problema com as configurações do host ESXi, o problema será exibido no portlet dos sistemas host ESXi do painel. Você pode selecionar o problema para exibir o nome do host ou o endereço IP do host ESXi que tem o problema.
+
+.Passos
+. Faça login no cliente vSphere
+. Na página atalhos, selecione *Ferramentas do NetApp ONTAP* na seção plug-ins.
+. Vá para *portlet de conformidade do host ESXi* na Visão geral (painel) das ferramentas do ONTAP para o plug-in do VMware vSphere.
+. Selecione o link *Apply Recommended Settings* (aplicar configurações recomendadas).
+. Na janela *Apply Recommended host settings* (aplicar configurações de host recomendadas), selecione os hosts que você deseja cumprir com as configurações de host recomendadas pelo NetApp e selecione *Next* (Avançar).
++
+
+NOTE: Você pode expandir o host ESXi para ver os valores atuais.
+
+. Na página de definições, selecione os valores recomendados, conforme necessário.
+. No painel de resumo, verifique os valores e selecione *Finish*. Você pode acompanhar o progresso no painel de tarefas recentes.
+
+
+*Informações relacionadas*
+
+link:../configure/configure-esx-server-multipath-and-timeout-settings.html["Configure as configurações do host ESXi"]

@@ -1,0 +1,180 @@
+---
+permalink: upgrade/upgrade-ontap-tools.html 
+sidebar: sidebar 
+keywords: upgrade 
+summary: A atualização é compatível com implantações de HA e não HA. 
+---
+= Atualize das ferramentas do ONTAP para o VMware vSphere 10.x para o 10,3
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A atualização é compatível com implantações de HA e não HA. Os caminhos de atualização suportados são:
+
+|===
+
+
+| Das ferramentas do ONTAP para a configuração do VMware vSphere 10,1 e 10,2 | Para as ferramentas do ONTAP para a configuração do VMware vSphere 10,3 
+
+
+| Não-HA pequeno | Não-HA e pequeno avançado 
+
+
+| Meio não-HA | Não-HA e meio avançado 
+
+
+| Avançado pequeno | Não-HA e pequeno avançado 
+
+
+| Meio avançado | Não-HA e meio avançado 
+
+
+| HA pequena | HA pequena 
+
+
+| HA médio | HA médio 
+
+
+| HA grande | HA grande 
+|===
+
+NOTE: Atualizações das ferramentas do ONTAP para VMware vSphere 10,1 e 10,2 para 10,3 são suportadas. Atualizações diretas das ferramentas ONTAP 10,0 para 10,3 não são suportadas.
+
+*Antes de começar*
+
+Para uma atualização sem HA, desligue a VM do ONTAP Tools e, para uma atualização de HA, desligue o primeiro nó antes de fazer as seguintes alterações nas configurações da máquina virtual (VM).
+
+* Adicione um disco rígido adicional de 100 GB a cada nó, pois os dados do serviço são armazenados localmente na VM.
+* Altere a CPU e a memória da VM desligada de acordo com o sabor da sua implementação. Ative o hot plugin para CPU e RAM.
++
+|===
+| Tipo de implantação do 10,3 | CPU (núcleo) por nó | Memória (GB) por nó | Espaço em disco (GB) por nó | CPU total (núcleo) | Memória (GB) | Espaço total em disco (GB) 
+
+
+| Não-HA pequeno | 9 | 18 | 350 | 9 | 18 | 350 
+
+
+| Meio não-HA | 13 | 26 | 350 | 13 | 26 | 350 
+
+
+| HA pequena | 9 | 18 | 350 | 27 | 54 | 1050 
+
+
+| HA média | 13 | 26 | 350 | 39 | 78 | 1050 
+
+
+| HA grande | 17 | 34 | 350 | 51 | 102 | 1050 
+|===
+* LIGUE a VM depois que as alterações forem feitas e aguarde que os serviços cheguem ao estado em execução.
+* Em caso de implantação de HA, faça as alterações de recursos, ative o hot plugin para CPU e RAM e adicione discos rígidos de 100 GB para o segundo e terceiro nó também. Não há necessidade de reinicializar esses nós.
+* Se o dispositivo foi implantado como um caminho local (implantação fácil) com as ferramentas 10,1 ou 10,2 do ONTAP, você precisa fazer um snapshot do quiesce antes de atualizar.
+
+
+Se você estiver atualizando das ferramentas do ONTAP para VMware vSphere 10,0 para 10,1, precisará concluir as etapas a seguir antes de prosseguir com a tarefa de atualização:
+
+*Ativar diagnóstico*
+
+. No vCenter Server, abra um console para as ferramentas do ONTAP.
+. Inicie sessão como utilizador de manutenção.
+. Digite *4* para selecionar *suporte e Diagnóstico*.
+. Introduza *2* para selecionar *Ativar acesso de diagnóstico remoto*.
+. Digite *y* para definir a senha de sua escolha.
+. Inicie sessão no endereço IP da VM a partir do terminal/massa com o utilizador como 'diag' e a palavra-passe definida na etapa anterior.
+
+
+*Faça um backup do MongoDB*
+
+Execute os seguintes comandos para fazer um backup do MongoDB:
+
+* kn exec -it ntv-mongodb-0 sh - kn é um alias do kubectl -n ntv-system.
+* Execute o comando _env | grep MONGODB_root_PASSWORD_ dentro do pod.
+* Execute o comando _exit_ para sair do pod.
+* Execute _kn exec ntv-mongodb-0 --mongodump -u root -p MONGODB_ROOT_PASSWORD --archive_tmp/mongodb-backup.gz --gzip_ comando para substituir o conjunto MONGO_ROOT_PASSWORD do comando acima.
+* Execute o comando _kn cp ntv-mongodb-0:/tmp/mongodb-backup.gz ./mongodb-backup.gz_ para copiar o backup do mongodb criado usando o comando acima do pod para o host.
+
+
+*Pegue o instantâneo quaise de todos os volumes*
+
+* Execute o comando 'kn get pvc' e salve a saída do comando.
+* Tire snapshots de todos os volumes um a um usando um dos seguintes métodos:
++
+** Na CLI, execute o comando _volume snapshot create -vserver <vserver_name> -volume <volume_name> -snapshot <snapshot_name>_
+** Na interface de usuário do Gerenciador de sistema do ONTAP, pesquise o volume pelo nome na barra de pesquisa e abra esse volume selecionando no nome. Vá para snapshot e adicione o snapshot desse volume.
+
+
+
+
+*Faça o snapshot das ferramentas do ONTAP para VMs VMware vSphere no vCenter (3VMs no caso de implantação HA, 1 VMs no caso de implantação não HA)*
+
+* Na interface de usuário do cliente vSphere, selecione a VM.
+* Vá para a guia instantâneos e selecione o botão *tirar instantâneo*. Faça um snapshot bloqueado da VM.  https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/take-snapshots-of-a-virtual-machine.html["Tire um instantâneo de uma máquina virtual"^]Consulte para obter detalhes.
+
+
+Antes de executar a atualização, exclua os pods concluídos do pacote de log com o prefixo "gerar suporte-pacote-job". Se a geração de pacotes de suporte estiver em andamento, aguarde que ela seja concluída e exclua o pod.
+
+Para qualquer tipo de atualização, você precisa adicionar uma unidade de disco rígido (HDD) adicional de 100 GB. Para adicionar um disco rígido, execute a seguinte tarefa.
+
+. Selecione a VM na configuração de nó único ou todas as três VMs na configuração de HA.
+. Clique com o botão direito do rato na(s) VM(s) e selecione *Adicionar novo dispositivo* > *disco rígido*
+. Adicione um HDD de 100 GB no campo *novo disco rígido*.
+. Selecione *aplicar*
+
+
+Depois de adicionar o disco rígido, atualize os recursos da VM para as respetivas configurações e reinicie a VM principal.
+
+Será criado um novo HDD. O provisionador de storage dinâmico usa esse HDD para gerar ou replicar volumes.
+
+.Passos
+. Faça o upload das ferramentas do ONTAP para a ISO de atualização do VMware vSphere para a biblioteca de conteúdo.
+. Na página da VM principal, selecione *ações* > *Editar configurações*
+. Selecione o arquivo ISO da biblioteca de conteúdo na janela de configurações de edição no campo *unidade de CD/DVD*.
+. Selecione o ficheiro ISO e selecione *OK*. Selecione a caixa de verificação Connected (ligado) no campo *CD/DVD drive* (unidade de CD/DVD). image:../media/primaryvm-edit-settings.png["Editar definições"]
+. No vCenter Server, abra um console para as ferramentas do ONTAP.
+. Inicie sessão como utilizador de manutenção.
+. Introduza *3* para selecionar o menu Configuração do sistema.
+. Introduza *7* para selecionar a opção de atualização.
+. Ao atualizar, as seguintes ações são executadas automaticamente:
++
+.. Atualização do certificado
+.. Atualização remota do plug-in
+
+
+
+
+Depois de atualizar para as ferramentas do ONTAP para o VMware vSphere 10,3, você pode:
+
+* Desative os serviços da interface de usuário do gerenciador
+* Passar de uma configuração que não seja HA para uma configuração HA
+* Faça escalabilidade vertical de uma configuração pequena que não seja HA, um meio que não seja HA, ou uma configuração média ou grande de HA.
+* No caso de uma atualização que não seja de HA, reinicie a VM das ferramentas do ONTAP para refletir as alterações. No caso de uma atualização de HA, reinicie o primeiro nó para refletir as alterações no nó.
+
+
+*Depois de terminar*
+
+Depois de atualizar de versões anteriores das ferramentas do ONTAP para o VMware vSphere para o 10,3, volte a digitalizar os adaptadores SRA para verificar se os detalhes estão atualizados na página adaptadores de replicação de armazenamento de recuperação de site do VMware Live.
+
+Depois de atualizar com êxito, exclua os volumes Trident do ONTAP manualmente usando o seguinte procedimento:
+
+
+NOTE: Essas etapas não são necessárias se as ferramentas do ONTAP para VMware vSphere 10,1 ou 10,2 estiverem em configurações não-HA de caminho local (caminho local) pequeno ou médio (caminho local).
+
+. No vCenter Server, abra um console para as ferramentas do ONTAP.
+. Inicie sessão como utilizador de manutenção.
+. Digite *4* para selecionar o menu *suporte e Diagnóstico*.
+. Digite *1* para selecionar a opção *Access Diagnostics shell*.
+. Execute o seguinte comando
++
+[listing]
+----
+sudo python3 /home/maint/scripts/ontap_cleanup.py
+----
+. Introduza o nome de utilizador e a palavra-passe do ONTAP
+
+
+Isso exclui todos os volumes do Trident no ONTAP usados nas ferramentas do ONTAP para VMware vSphere 10,1/10,2.
+
+*Informações relacionadas*
+
+link:../migrate/migrate-to-latest-ontaptools.html["Migrar das ferramentas do ONTAP para o VMware vSphere 9.x para o 10,3"]

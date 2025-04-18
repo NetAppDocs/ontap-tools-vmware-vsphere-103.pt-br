@@ -1,0 +1,31 @@
+---
+permalink: manage/delete-deployment.html 
+sidebar: sidebar 
+keywords: ONTAP tools,Storage Replication Adapter 
+summary: Depois de excluir as ferramentas do ONTAP para a implantação do VMware vSphere, você deve limpar o FlexVolumes criado durante a implantação. Se você usou um cluster ONTAP dedicado para implantações, deve limpar o FlexVolumes à medida que a implantação cria muitos FlexVolumes que não são utilizados, resultando em desempenho reduzido. 
+---
+= Remover volumes FlexVol
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando você usa um cluster ONTAP dedicado para ferramentas do ONTAP para implantação do VMware, ele cria muitos volumes FlexVol não utilizados. Depois de remover as ferramentas do ONTAP para VMware vSphere, você deve remover os volumes do FlexVol para evitar possíveis impactos no desempenho.
+
+.Passos
+. Determine as ferramentas do ONTAP para o tipo de implantação do VMware vSphere a partir da VM do nó primário.
++
+_cat /opt/NetApp/meta/ansible_vars.yaml | grep -i protocol_
+
++
+Se for uma implantação iSCSI, você precisa excluir os grupos também.
+
+. Obtenha a lista de volumes do FlexVol.
++
+_Kubectl descreva persistentvolumes | grep internalName | awk -F' ''print 2'_
+
+. Remova as VMs do vCenter Server. Consulte a https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-virtual-machine-administration-guide-8-0/managing-virtual-machinesvsphere-vm-admin/adding-and-removing-virtual-machinesvsphere-vm-admin.html#GUID-376174FE-F936-4BE4-B8C2-48EED42F110B-en["Remover e Registrar novamente VMs e modelos de VM"].
+. Excluir volumes FlexVol do Gerenciador de sistema do ONTAP. Consulte a https://docs.netapp.com/us-en/ontap/volumes/delete-flexvol-task.html["Eliminar um FlexVol volume"]. No comando CLI para excluir um volume, forneça o nome exato dos volumes FlexVol.
+. Excluir grupos SAN do sistema de armazenamento ONTAP em caso de implantação iSCSI. Consulte a https://docs.netapp.com/us-en/ontap/san-admin/manage-san-initiators-task.html["Visualizar e gerenciar iniciadores e grupos SAN"].
+

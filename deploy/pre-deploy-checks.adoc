@@ -1,0 +1,136 @@
+---
+permalink: deploy/pre-deploy-checks.html 
+sidebar: sidebar 
+keywords: ONTAP tools,Storage Replication Adapter 
+summary: Antes de implantar as ferramentas do ONTAP para o VMware vSphere, você deve estar familiarizado com os requisitos de espaço para o pacote de implantação e alguns requisitos básicos do sistema de host. 
+---
+= Antes de começar...​
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Certifique-se de que os seguintes requisitos sejam atendidos antes de prosseguir com a implantação:
+
+|===
+| Requisitos | O seu estado 
+
+
+| A versão do vSphere, a versão do ONTAP e a versão do host ESXi são compatíveis com a versão das ferramentas do ONTP. | ❏ Sim ❏ não 
+
+
+| O ambiente do vCenter Server está configurado e configurado | ❏ Sim ❏ não 
+
+
+| O cache do navegador é excluído | ❏ Sim ❏ não 
+
+
+| Você tem as credenciais do vCenter Server pai | ❏ Sim ❏ não 
+
+
+| Você tem as credenciais de login para a instância do vCenter Server, à qual as ferramentas do ONTAP para VMware vSphere conetarão após a implantação para Registro | ❏ Sim ❏ não 
+
+
+| O nome de domínio no qual o certificado é emitido é mapeado para o endereço IP virtual em uma implantação multi-vCenter onde certificados de CA personalizados são obrigatórios. | ❏ Sim ❏ não 
+
+
+| Você executou a verificação nslookup no nome de domínio para verificar se o domínio está sendo resolvido para o endereço IP pretendido. | ❏ Sim ❏ não 
+
+
+| O certificado é criado com o nome de domínio e o endereço IP das ferramentas ONTAP. | ❏ Sim ❏ não 
+
+
+| O aplicativo e os serviços internos das ferramentas do ONTAP podem ser acessados a partir do vCenter Server. | ❏ Sim ❏ não 
+
+
+| Ao usar SVMs de alocação a vários clientes, você tem um LIF de gerenciamento da SVM em cada SVM. | ❏ Sim ❏ não 
+|===
+
+
+== Folha de cálculo de implementação
+
+
+
+=== Para implantação de nó único
+
+Use a seguinte Planilha para reunir as informações necessárias para as ferramentas do ONTAP para a implantação inicial do VMware vSphere: Para as ferramentas do ONTAP para a implantação inicial do VMware vSphere:
+
+|===
+| Requisito | O seu valor 
+
+
+| Endereço IP do aplicativo ONTAP Tools |  
+
+
+| Endereço IP da interconexão do nó para comunicação entre nós |  
+
+
+| Nome de host DNS para o primeiro nó |  
+
+
+| Servidor DNS primário |  
+
+
+| Servidor DNS secundário |  
+
+
+| Domínio de pesquisa DNS |  
+
+
+| Endereço IPv4 para o nó principal |  
+
+
+| Máscara de sub-rede para o endereço IPv4 |  
+
+
+| Gateway padrão para o endereço IPv4 |  
+
+
+| Endereço IPv6 (opcional) |  
+
+
+| Comprimento do prefixo IPv6 (opcional) |  
+
+
+| Gateway para o endereço IPv6 (opcional) |  
+|===
+Crie Registros DNS para todos os endereços IP acima. Antes de atribuir nomes de host, mapeie-os para os endereços IP gratuitos no DNS. Todos os endereços IP devem estar na mesma VLAN selecionada para implantação.
+
+
+
+=== Para implantação de alta disponibilidade (HA)
+
+Além dos requisitos de implantação de nó único, você precisará das seguintes informações para implantação de HA:
+
+|===
+
+
+| Requisito | O seu valor 
+
+
+| Servidor DNS primário |  
+
+
+| Servidor DNS secundário |  
+
+
+| Domínio de pesquisa DNS |  
+
+
+| Nome de host DNS para o segundo nó |  
+
+
+| Endereço IP para o segundo nó |  
+
+
+| Nome de host DNS para o terceiro nó |  
+
+
+| Endereço IP para o terceiro nó |  
+|===
+
+
+== Configuração de firewall de rede
+
+Abra as portas necessárias para os endereços IP no firewall da rede. As ferramentas do ONTAP devem ser capazes de alcançar esse LIF pela porta 443. link:../deploy/prerequisites.html["Requisitos portuários"]Consulte para obter as atualizações mais recentes.

@@ -1,0 +1,106 @@
+---
+permalink: deploy/ontap-tools-deployment.html 
+sidebar: sidebar 
+keywords:  
+summary: As ferramentas do ONTAP para o dispositivo VMware vSphere são implantadas como nó único de pequeno porte com serviços básicos para dar suporte a armazenamentos de dados NFS e VMFS. 
+---
+= Implantar as ferramentas do ONTAP para o VMware vSphere
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+As ferramentas do ONTAP para o dispositivo VMware vSphere são implantadas como nó único de pequeno porte com serviços básicos para dar suporte a armazenamentos de dados NFS e VMFS.
+
+*Antes de começar*
+
+Uma biblioteca de conteúdo no VMware é um objeto de contentor que armazena modelos de VM, modelos vApp e outros tipos de arquivos. A implantação com biblioteca de conteúdo oferece uma experiência perfeita, pois não depende da conetividade de rede.
+
+
+NOTE: Você deve armazenar a biblioteca de conteúdo em um datastore compartilhado para que todos os hosts dentro de um cluster possam acessá-la. Crie uma biblioteca de conteúdo para armazenar o OVA antes de configurar o dispositivo para a configuração HA. Não exclua o modelo de biblioteca de conteúdo após a implantação.
+
+
+NOTE: Para ativar a implantação de HA posteriormente, não implante a máquina virtual que hospeda as ferramentas do ONTAP diretamente em um host ESXi. Em vez disso, implante-o em um cluster ou pool de recursos.
+
+Se você não tiver uma biblioteca de conteúdo, siga estas etapas para criar uma:
+
+*Criar biblioteca de conteúdo* no seu plano de usar apenas uma pequena implantação de nó único, não é necessário criar uma biblioteca de conteúdo.
+
+. Faça o download do `.zip` arquivo que contém binários (_.ova_) e certificados assinados para ferramentas do ONTAP para VMware vSphere no https://mysupport.netapp.com/site/products/all/details/otv10/downloads-tab["Site de suporte da NetApp"^] .
+. Faça login no cliente vSphere
+. Selecione o menu do cliente vSphere e selecione *bibliotecas de conteúdo*.
+. Selecione *criar* à direita da página.
+. Forneça um nome para a biblioteca e crie a biblioteca de conteúdo.
+. Navegue até a biblioteca de conteúdo que você criou.
+. Selecione *ações* à direita da página e selecione *Importar item* e importe o arquivo OVA.
+
+
+
+NOTE: Para obter mais informações, https://blogs.vmware.com/vsphere/2020/01/creating-and-using-content-library.html["Criando e usando a Biblioteca de conteúdo"] consulte o blog.
+
+
+NOTE: Antes de prosseguir com a implantação, defina o DRS (Distributed Resource Scheduler) do cluster no inventário como 'Conservative'. Isso garante que as VMs não sejam migradas durante a instalação.
+
+As ferramentas do ONTAP para o VMware vSphere são inicialmente implantadas como uma configuração não HA. Para escalar para implantação HA, você precisará ativar o hot plug-in da CPU e o hot plug-in da memória. Você pode executar esta etapa como parte do processo de implantação ou editar as configurações da VM após a implantação.
+
+.Passos
+. Faça o download do `.zip` arquivo que contém binários (_.ova_) e certificados assinados para ferramentas do ONTAP para VMware vSphere no https://mysupport.netapp.com/site/products/all/details/otv10/downloads-tab["Site de suporte da NetApp"^] . Se você tiver importado o OVA para a biblioteca de conteúdo, você pode pular esta etapa e prosseguir com a próxima etapa.
+. Faça login no servidor vSphere.
+. Navegue até o pool de recursos, cluster ou host onde você pretende implantar o OVA.
++
+
+NOTE: Nunca armazene as ferramentas do ONTAP para a máquina virtual VMware vSphere em armazenamentos de dados vVols que ele gerencia.
+
+. Você pode implantar o OVA da biblioteca de conteúdo ou do sistema local.
++
+|===
+
+
+| Do sistema local | Da biblioteca de conteúdo 
+
+
+| a. clique com o botão direito do Mouse e selecione *Deploy OVF template...*. b. escolha o arquivo OVA no URL ou navegue até seu local e selecione *Next*. | r. vá para a biblioteca de conteúdo e selecione o item da biblioteca que você deseja implantar. b. Selecione *ações* > *Nova VM a partir deste modelo* 
+|===
+. No campo *Selecione um nome e pasta*, insira o nome da máquina virtual e escolha sua localização.
++
+** Se você estiver usando a versão do vCenter Server 8.0.3, selecione a opção *Personalizar o hardware da máquina virtual*, que ativará uma etapa adicional chamada *Personalizar hardware* antes de prosseguir para a janela *Pronto para concluir*.
+** Se você estiver usando a versão do vCenter Server 7.0.3, siga as etapas na seção *o que vem a seguir?* no final da implantação.
+
+
+. Selecione um recurso de computador e selecione *Next*. Opcionalmente, marque a caixa para *ligar automaticamente a VM implantada*.
+. Revise os detalhes do modelo e selecione *Next*.
+. Leia e aceite o contrato de licença e selecione *Next*.
+. Selecione o armazenamento para a configuração e o formato do disco e selecione *Next*.
+. Selecione a rede de destino para cada rede de origem e selecione *seguinte*.
+. Na janela *Personalizar modelo*, preencha os campos obrigatórios e selecione *seguinte*.
++
+** As informações são validadas durante a instalação. Se houver uma discrepância, uma mensagem de erro será exibida no console da Web e você será solicitado a corrigi-la.
+** Os nomes de host devem incluir letras (A-Z, a-z), dígitos (0-9) e hífens (-). Para configurar a pilha dupla, especifique o nome do host mapeado para o endereço IPv6.
++
+
+NOTE: O Pure IPv6 não é compatível. O modo misto é suportado com VLAN contendo endereços IPv6 e IPv4.
+
+
+
+. Ao usar a versão do vCenter Server 8.0.3, na janela *Personalizar hardware*, ative as opções *hot add* da CPU e *Memory hot plug* para permitir a funcionalidade HA.
+. Revise os detalhes na janela *Pronto para concluir*, selecione *concluir*.
++
+À medida que a tarefa de implantação é criada, o progresso é mostrado na barra de tarefas do vSphere.
+
+. Ligue a VM após a conclusão da tarefa.
+
+
+Você pode acompanhar o andamento da instalação no console da Web da VM.
+
+Se houver discrepâncias no formulário OVF, uma caixa de diálogo solicitará uma ação corretiva. Use o botão Tab para navegar, fazer as alterações necessárias e selecione "OK.você tem três tentativas para resolver quaisquer problemas. Se os problemas continuarem após três tentativas, o processo de instalação será interrompido e é aconselhável tentar novamente a instalação em uma nova máquina virtual.
+
+.O que vem a seguir?
+Se você tiver ferramentas de implantação do ONTAP para o VMware vSphere com o vCenter Server 7,0.3, siga estas etapas após a implantação.
+
+. Faça login no cliente vCenter
+. Desligue o nó de ferramentas do ONTAP.
+. Navegue até as ferramentas do ONTAP para a máquina virtual VMware vSphere em *inventários* e selecione a opção *Editar configurações*.
+. Nas opções *CPU*, marque a caixa de seleção *Enable CPU hot add*
+. Nas opções *memória*, marque a caixa de seleção *Ativar* contra *Memory hot plug*.
+

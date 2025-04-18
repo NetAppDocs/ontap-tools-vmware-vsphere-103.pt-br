@@ -1,0 +1,21 @@
+---
+permalink: manage/manage-storage-threshold.html 
+sidebar: sidebar 
+keywords:  
+summary: Você pode definir o limite para receber notificações no vCenter Server quando o volume e a capacidade agregada atingirem determinados níveis. 
+---
+= Gerenciar limites de storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode definir o limite para receber notificações no vCenter Server quando o volume e a capacidade agregada atingirem determinados níveis.
+
+.Passos:
+. Faça login no cliente vSphere
+. Na página atalhos, selecione *Ferramentas do NetApp ONTAP* na seção plug-ins.
+. No painel esquerdo das ferramentas do ONTAP, navegue até *Configurações* > *Configurações de limiar* > *Editar*.
+. Na janela *Edit Threshold* (Editar limite), forneça os valores desejados nos campos *Near Full* (quase completo) e *Full* (completo) e selecione *Save* (Guardar). Você pode redefinir os números para valores recomendados, que são 80 para quase cheio e 90 para cheio.
+

@@ -1,0 +1,30 @@
+---
+permalink: manage/start-the-ssh-on-other-nodes.html 
+sidebar: sidebar 
+keywords:  
+summary: Você precisa iniciar o SSH em outros nós antes de atualizar. 
+---
+= Inicie o SSH em outros nós
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você precisa iniciar o SSH em outros nós antes de atualizar.
+
+.Antes de começar
+A extensão do provedor VASA deve estar habilitada para sua instância do vCenter Server.
+
+*Sobre esta tarefa*
+
+Execute este procedimento em cada um dos nós antes de atualizar.
+
+.Passos
+. No vCenter Server, abra um console para o provedor VASA.
+. Inicie sessão como utilizador de manutenção.
+. Entre `4` para selecionar suporte e Diagnóstico.
+. Introduza `1` para selecionar Access diagnostic shell (Acesso à shell de diagnóstico).
+. Entre `y` para continuar.
+. Execute o comando _sudo systemctl restart ssh_.
+

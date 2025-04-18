@@ -1,0 +1,129 @@
+---
+permalink: deploy/deployment-error-codes.html 
+sidebar: sidebar 
+keywords: upgrade 
+summary: Esta página descreve os códigos de erro para as operações de implantação, reinicialização e recuperação de ferramentas do ONTAP para o sistema VMware vSphere. 
+---
+= Códigos de erro de implantação
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode encontrar códigos de erro durante as ferramentas do ONTAP para operações de implantação, reinicialização e recuperação do VMware vSphere. Os códigos de erro têm cinco dígitos, onde os dois primeiros dígitos representam o script que encontrou o problema, e os últimos três dígitos representam o fluxo de trabalho específico dentro desse script.
+
+Todos os logs de erros são registrados no arquivo ansible-perl-errors.log para facilitar o rastreamento e a resolução de problemas. Esse arquivo de log contém o código de erro e a tarefa Ansible com falha.
+
+
+NOTE: Os códigos de erro fornecidos nesta página são apenas para referência. Entre em Contato com a equipe de suporte se o erro persistir ou se não houver nenhuma resolução mencionada.
+
+A tabela a seguir lista os códigos de erro e os nomes de arquivo correspondentes.
+
+|===
+
+
+| *Código de erro* | *Nome do script* 
+
+
+| 00 | firstboot-network-config.pl, modo de implantação 
+
+
+| 01 | firstboot-network-config.pl, atualização do modo 
+
+
+| 02 | firstboot-inputs-validation.pl 
+
+
+| 03 | firstboot-deploy-otv-ng.pl, implantar, HA 
+
+
+| 04 | firstboot-deploy-otv-ng.pl, implantar, não HA 
+
+
+| 05 | firstboot-deploy-otv-ng.pl, reinicie 
+
+
+| 06 | firstboot-deploy-otv-ng.pl, upgrade, HA 
+
+
+| 07 | firstboot-deploy-otv-ng.pl, upgrade, não HA 
+
+
+| 08 | firstboot-otv-recovery.pl 
+
+
+| 09 | post-deploy-upgrade.pl 
+|===
+Os últimos três dígitos do código de erro indicam o erro de fluxo de trabalho específico dentro do script:
+
+|===
+
+
+| *Código de erro de implantação* | *Fluxo de trabalho* | *Resolução* 
+
+
+| 050 | Falha na geração da chave SSH | Reinicie a máquina virtual principal (VM). 
+
+
+| 053 | Falha ao instalar o RKE2 | Execute o seguinte e reinicie a VM principal ou reimplante: Sudo rke2-killall.sh (todas as VMs) sudo rke2-uninstall.sh (todas as VMs). 
+
+
+| 054 | Falha ao definir kubeconfig | Reimplantar 
+
+
+| 055 | Falha ao implantar o Registro | Se o pod de Registro estiver presente, aguarde que o pod esteja pronto e reinicie a VM principal ou então reimplante. 
+
+
+| 059 | A implantação do KubeVip falhou | Certifique-se de que o endereço IP virtual do plano de controle do Kubernetes e o endereço IP do balanceador de carga fornecidos durante a implantação pertencem à mesma VLAN e são endereços IP livres. Reinicie se todos os pontos anteriores estiverem corretos. Caso contrário, reimplante. 
+
+
+| 060 | A implantação do operador falhou | Reinicie 
+
+
+| 061 | A implantação de serviços falhou | Execute a depuração básica do Kubernetes, como Get Pods, get rs, Get svc, e assim por diante no namespace ntv-system para mais detalhes e logs de erro em /var/log/ansible-perl-errors.log e /var/log/ansible-run.log e redeploy. 
+
+
+| 062 | A implantação de serviços de ferramentas do ONTAP falhou | Consulte os logs de erro em /var/log/ansible-perl-errors.log para obter mais detalhes e reimplantar. 
+
+
+| 065 | O URL da página do Swagger não está acessível | Reimplantar 
+
+
+| 066 | As etapas de pós-implantação para o certificado do gateway falharam | Faça o seguinte para recuperar/concluir a atualização: * Ativar shell de diagnóstico. * Executar 'passo perl /home/maint/scripts/post-deploy-upgrade.pl --postDeploy' comando. * Verifique os logs em /var/log/post-deploy-upgrade.log. 
+
+
+| 088 | A configuração da rotação de log para journald falhou | Verifique as configurações de rede da VM compatíveis com o host no qual a VM está hospedada. Você pode tentar migrar para outro host e reiniciar a VM. 
+
+
+| 089 | A alteração da propriedade do registo de resumo, o ficheiro de configuração de rotação falhou | Reinicie a VM principal. 
+
+
+| 096 | Instalar provisionador de storage dinâmico | - 
+
+
+| 108 | Falha no script de semeadura | - 
+|===
+|===
+
+
+| *Reboot error code* | *Fluxo de trabalho* | *Resolução* 
+
+
+| 067 | A aguardar o tempo limite do servidor rke2. | - 
+
+
+| 101 | Falha ao repor a palavra-passe do utilizador de Manut/Console. | - 
+
+
+| 102 | Falha ao eliminar o ficheiro de palavra-passe durante a reposição da palavra-passe do utilizador de manutenção/consola. | - 
+
+
+| 103 | Falha ao atualizar a nova senha de usuário de Manut/Console no Vault. | - 
+
+
+| 088 | A configuração da rotação de log para journald falhou. | Verifique as configurações de rede da VM compatíveis com o host no qual a VM está hospedada. Você pode tentar migrar para outro host e reiniciar a VM. 
+
+
+| 089 | A alteração da propriedade do registo de resumo, o ficheiro de configuração de rotação falhou. | Reinicie a VM. 
+|===

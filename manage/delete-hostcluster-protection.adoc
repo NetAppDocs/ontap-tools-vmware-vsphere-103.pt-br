@@ -1,0 +1,22 @@
+---
+permalink: manage/delete-hostcluster-protection.html 
+sidebar: sidebar 
+keywords: vVols datastore,delete vVol 
+summary: Quando você remove a proteção do cluster de host, os datastores ficam desprotegidos. 
+---
+= Remova a proteção do cluster do host
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando você remove a proteção do cluster de host, os datastores ficam desprotegidos.
+
+.Passos
+. Para exibir os clusters de host protegidos, navegue até *Ferramentas do NetApp ONTAP* > *proteção* > *relacionamentos de cluster do host*.
++
+Nesta página, você pode monitorar os clusters de host protegidos, juntamente com seu estado de proteção, a relação do SnapMirror e seu status de SnapMirror correspondente.
+
+. Na janela *Host cluster protection*, selecione o menu de elipse contra o cluster e, em seguida, selecione *Remove protection*.
+

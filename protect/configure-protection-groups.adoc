@@ -1,0 +1,67 @@
+---
+permalink: protect/configure-protection-groups.html 
+sidebar: sidebar 
+keywords:  
+summary: Você deve criar grupos de proteção para proteger um grupo de máquinas virtuais no site protegido. 
+---
+= Configurar sites protegidos e de recuperação
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você deve criar grupos de proteção para proteger um grupo de máquinas virtuais no site protegido.
+
+
+
+== Configurar grupos de proteção
+
+.Antes de começar
+Você deve garantir que ambos os sites de origem e destino estejam configurados para o seguinte:
+
+* Mesma versão do VMware Live Site Recovery instalada
+* Máquinas virtuais
+* Emparelhados sites protegidos e de recuperação
+* Os datastores de origem e destino devem ser montados nos respetivos sites
+
+
+.Passos
+. Faça login no vCenter Server e selecione *Site Recovery* > *Protection Groups*.
+. No painel *grupos de proteção*, selecione *novo*.
+. Especifique um nome e uma descrição para o grupo de proteção, direção e selecione *Next*.
+. No campo *Type*, selecione a opção *Type field...* como grupos de datastore (replicação baseada em array) para armazenamento de dados NFS e VMFS. O domínio de falha não é nada além de SVMs com replicação ativada. Os SVMs que só têm peering implementado e não têm problemas são exibidos.
+. Na guia grupos de replicação, selecione o par de matrizes ativado ou os grupos de replicação que têm a máquina virtual configurada e, em seguida, selecione *Next*.
++
+Todas as máquinas virtuais no grupo de replicação são adicionadas ao grupo de proteção.
+
+. Selecione o plano de recuperação existente ou crie um novo plano selecionando *Adicionar ao novo plano de recuperação*.
+. Na guia Pronto para concluir, revise os detalhes do grupo de proteção que você criou e selecione *concluir*.
+
+
+
+
+== Emparelhe locais protegidos e de recuperação
+
+Você deve emparelhar os sites protegidos e de recuperação criados usando o vSphere Client para habilitar o Storage Replication Adapter (SRA) para descobrir os sistemas de armazenamento.
+
+.Antes de começar
+* Você deve ter o VMware Live Site Recovery instalado nos sites protegidos e de recuperação.
+* Você deve ter o SRA instalado nos sites protegidos e de recuperação.
+
+
+.Passos
+. Clique duas vezes em *Site Recovery* na página inicial do vSphere Client e selecione *Sites*.
+. Selecione *Objects* > *actions* > *Pair Sites*.
+. Na caixa de diálogo *Emparelhar servidores do Gestor de recuperação de Site*, introduza o endereço do controlador de Serviços de Plataforma do site protegido e, em seguida, selecione *seguinte*.
+. Na seção Selecionar vCenter Server, faça o seguinte:
++
+.. Verifique se o vCenter Server do site protegido aparece como um candidato correspondente para emparelhar.
+.. Insira as credenciais administrativas SSO e selecione *Finish*.
+
+
+. Se solicitado, selecione *Sim* para aceitar os certificados de segurança.
+
+
+.Resultado
+Os locais protegidos e de recuperação aparecerão na caixa de diálogo objetos.

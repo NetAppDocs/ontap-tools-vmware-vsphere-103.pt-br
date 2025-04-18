@@ -1,0 +1,42 @@
+---
+permalink: manage/collect-the-log-files.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Você pode coletar arquivos de log para as ferramentas do ONTAP para VMware vSphere a partir das opções disponíveis nas ferramentas do ONTAP para a interface gráfica do usuário (GUI) do VMware vSphere. O suporte técnico pode solicitar que você colete os arquivos de log para ajudar a solucionar um problema.' 
+---
+= Recolha os ficheiros de registo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode coletar arquivos de log para as ferramentas do ONTAP para VMware vSphere a partir das opções disponíveis na interface de usuário do Gerenciador de ferramentas do ONTAP. O suporte técnico pode solicitar que você colete os arquivos de log para ajudar a solucionar um problema.
+
+
+NOTE: A geração de logs a partir do Gerenciador de ferramentas do ONTAP inclui todos os logs para todas as instâncias do vCenter Server. A geração de logs a partir da interface de usuário do cliente vCenter é definida para o vCenter Server selecionado.
+
+.Passos
+. Inicie o Gerenciador de ferramentas do ONTAP a partir de um navegador da Web: `\https://<ONTAPtoolsIP>:8443/virtualization/ui/`
+. Faça login com as ferramentas do ONTAP para as credenciais de administrador do VMware vSphere fornecidas durante a implantação.
+. Selecione *Log Bundles* na barra lateral.
++
+Esta operação pode demorar vários minutos.
+
+. Selecione *Generate* para gerar os arquivos de log.
+. Insira o rótulo do Pacote de Log e selecione *Generate*.
++
+Baixe o arquivo tar.gz e envie-o para o suporte técnico.
+
+
+
+Siga as etapas abaixo para gerar o pacote de log usando a interface do usuário do cliente vCenter:
+
+.Passos
+. Faça login no cliente vSphere
+. Na página inicial do vSphere Client, vá para *Support* > *Log bundle* > *Generate*.
+. Forneça o rótulo do pacote de log e gere o pacote de log. Você pode ver a opção de download quando os arquivos são gerados. O download pode levar algum tempo.
+
+
+
+NOTE: O pacote de log gerado substitui o pacote de log gerado nos últimos 3 dias ou 72 horas.

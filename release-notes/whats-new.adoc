@@ -1,0 +1,64 @@
+---
+permalink: release-notes/whats-new.html 
+sidebar: sidebar 
+keywords: 'what"s new, release notes, 10.3, ONTAP tools for VMware vSphere' 
+summary: Saiba mais sobre os novos recursos disponíveis nas ferramentas do ONTAP para VMware vSphere 10,3. 
+---
+= Novidades nas ferramentas do ONTAP para o VMware vSphere 10,3
+:allow-uri-read: 
+
+
+[role="lead"]
+Saiba mais sobre os novos recursos disponíveis nas ferramentas do ONTAP para VMware vSphere 10,3.
+
+[cols="30%,70%"]
+|===
+| Atualização | Descrição 
+
+
+ a| 
+Suporte para novas versões de plataforma e aplicativos
+ a| 
+As ferramentas do ONTAP para VMware vSphere 10,3 agora oferecem suporte a essas versões de plataforma e aplicativos:
+
+* ONTAP 9.16,0 e posterior
+* VMware vSphere 8,0 U3
+* VMware Live Site Recovery 9,0
+
+
+
+
+ a| 
+Facilidade de implantação
+ a| 
+Agora você pode implantar as ferramentas do ONTAP para o VMware vSphere 10,3 com requisitos mínimos em um cluster de nó único e atualizá-lo para uma implantação de alta disponibilidade (HA) ou vários nós.
+
+
+
+ a| 
+Provisionamento e configuração otimizados
+ a| 
+As ferramentas do ONTAP para VMware vSphere 10,3 removem as dependências associadas ao Trident e agora usam provisionador de storage dinâmico para permitir o provisionamento e a configuração aprimorados.
+
+
+
+ a| 
+Segurança aprimorada para autenticação de API REST
+ a| 
+As ferramentas do ONTAP para VMware vSphere 10,3 agora dependem de certificados assinados pela CA para APIs REST e interface de usuário das ferramentas ONTAP para fornecer maior segurança.
+
+
+
+ a| 
+Suporte para sistemas ASA R2
+ a| 
+As ferramentas do ONTAP para o VMware vSphere 10,3 oferecem suporte ao provisionamento de armazenamento de dados VMFS em sistemas ASA R2 para ajudar a proteger armazenamentos de dados VMFS com sincronização ativa do SnapMirror e recuperação de site em tempo real SRA/VMware.
+
+
+
+ a| 
+Observabilidade aprimorada
+ a| 
+As ferramentas do ONTAP para o VMware vSphere 10,3 estendem o suporte a métricas de observação para datastores VMFS e evolução e suas respetivas VMs.
+
+|===

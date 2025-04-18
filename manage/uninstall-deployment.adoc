@@ -1,0 +1,40 @@
+---
+permalink: manage/uninstall-deployment.html 
+sidebar: sidebar 
+keywords: ONTAP tools,Storage Replication Adapter 
+summary: Siga as instruções nesta seção para encerrar suas ferramentas do ONTAP para a implantação do VMware vSphere com simplicidade. 
+---
+= Desinstale as ferramentas do ONTAP para o VMware vSphere
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A desinstalação das ferramentas do ONTAP para VMware vSphere exclui todos os dados das ferramentas.
+
+.Passos
+. Remova ou mova todas as máquinas virtuais das ferramentas do ONTAP para armazenamentos de dados gerenciados do VMware vSphere.
++
+** Para remover as máquinas virtuais, consulte https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-virtual-machine-administration-guide-8-0/managing-virtual-machinesvsphere-vm-admin/adding-and-removing-virtual-machinesvsphere-vm-admin.html#GUID-376174FE-F936-4BE4-B8C2-48EED42F110B-en["Remover e Registrar novamente VMs e modelos de VM"]
+** Para movê-los para um datastore não gerenciado, consulte https://techdocs.broadcom.com/it/it/vmware-cis/vsphere/vsphere/8-0/vcenter-and-host-management-8-0/migrating-virtual-machines-host-management/migration-with-vmotion-host-management/migration-with-storage-vmotion-host-management.html["Storage vMotion"]
+
+
+. link:../manage/delete-ds.html["Excluir datastores"] Criado nas ferramentas do ONTAP para VMware vSphere.
+. Se você ativou o provedor VASA, selecione *Configurações* > *Configurações do provedor VASA* > *DesRegistrar* nas ferramentas do ONTAP para cancelar o Registro dos provedores VASA de todos os servidores vCenter.
+. Desassocie todos os backends de armazenamento da instância do vCenter Server. link:../manage/manage-vcenter.html["Dissociar os backends de armazenamento com a instância do vCenter Server"]Consulte a .
+. Excluir todos os backends de armazenamento. link:../manage/storage-backend.html["Gerenciar backends de armazenamento"]Consulte a .
+. Remova o adaptador SRA do VMware Live Site Recovery:
++
+.. Faça login como administrador na interface de gerenciamento do VMware Live Site Recovery Appliance usando a porta 5480.
+.. Selecione *adaptadores de replicação de armazenamento*.
+.. Selecione o cartão SRA apropriado e, no menu suspenso, selecione *Excluir*.
+.. Confirme se você sabe os resultados da exclusão do adaptador e selecione *Excluir*.
+
+
+. Exclua as instâncias do vCenter Server integradas às ferramentas do ONTAP para VMware vSphere. link:../manage/manage-vcenter.html["Gerenciar instâncias do vCenter Server"]Consulte a .
+. Desligue as ferramentas do ONTAP para VMs VMware vSphere do vCenter Server e exclua as VMs.
+
+
+.O que vem a seguir?
+link:../manage/delete-deployment.html["Remover volumes FlexVol"]

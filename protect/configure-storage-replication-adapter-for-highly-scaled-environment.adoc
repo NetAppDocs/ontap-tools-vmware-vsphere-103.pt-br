@@ -1,0 +1,68 @@
+---
+permalink: protect/configure-storage-replication-adapter-for-highly-scaled-environment.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Você deve configurar os intervalos de tempo de armazenamento de acordo com as configurações recomendadas para Storage Replication Adapter (SRA) para ter um desempenho ideal em ambientes altamente dimensionados.' 
+---
+= Configure o SRA para ambientes altamente dimensionados
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você deve configurar os intervalos de tempo de armazenamento de acordo com as configurações recomendadas para Storage Replication Adapter (SRA) para ter um desempenho ideal em ambientes altamente dimensionados.
+
+
+
+== Definições do fornecedor de armazenamento
+
+Você deve definir os seguintes valores de tempo limite no VMware Live Site Recovery para ambiente dimensionado:
+
+|===
+
+
+| * Configurações avançadas* | *Valores de tempo limite* 
+
+
+ a| 
+`StorageProvider.resignatureTimeout`
+ a| 
+Aumente o valor da definição de 900 segundos para 12000 segundos.
+
+
+
+ a| 
+`storageProvider.hostRescanDelaySec`
+ a| 
+60
+
+
+
+ a| 
+`storageProvider.hostRescanRepeatCnt`
+ a| 
+20
+
+
+
+ a| 
+`storageProvider.hostRescanTimeoutSec`
+ a| 
+Definir um valor alto (por exemplo: 99999)
+
+|===
+Você também deve ativar a `StorageProvider.autoResignatureMode` opção.
+
+ https://techdocs.broadcom.com/us/en/vmware-cis/live-recovery/live-site-recovery/9-0/how-do-i-protect-my-environment/advanced-srm-configuration/reconfigure-srm-settings/change-storage-provider-settings.html["Altere as definições do fornecedor de armazenamento"]Consulte para obter mais informações sobre como modificar as definições do fornecedor de armazenamento.
+
+
+
+== Definições de armazenamento
+
+Quando você atinge um tempo limite, aumente os valores de `storage.commandTimeout` e `storage.maxConcurrentCommandCnt` para um valor mais alto.
+
+
+NOTE: O intervalo de tempo limite especificado é o valor máximo. Não é necessário esperar que o tempo limite máximo seja atingido. A maioria dos comandos termina dentro do intervalo de tempo limite máximo definido.
+
+ https://techdocs.broadcom.com/us/en/vmware-cis/live-recovery/live-site-recovery/9-0/how-do-i-protect-my-environment/advanced-srm-configuration/reconfigure-srm-settings/change-storage-settings.html["Altere as definições de armazenamento"]Consulte para modificar as definições do fornecedor de SAN.

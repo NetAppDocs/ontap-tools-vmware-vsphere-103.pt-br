@@ -1,0 +1,161 @@
+---
+permalink: upgrade/upgrade-error-codes.html 
+sidebar: sidebar 
+keywords: upgrade 
+summary: Esta página descreve os códigos de erro para a operação de atualização das ferramentas do ONTAP para o sistema VMware vSphere. 
+---
+= Atualizar códigos de erro
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode encontrar códigos de erro durante as ferramentas do ONTAP para a operação de atualização do VMware vSphere. Os códigos de erro têm cinco dígitos, onde os dois primeiros dígitos representam o script que encontrou o problema, e os últimos três dígitos representam o fluxo de trabalho específico dentro desse script.
+
+Todos os logs de erros são registrados no arquivo ansible-perl-errors.log para facilitar o rastreamento e a resolução de problemas. Esse arquivo de log contém o código de erro e a tarefa Ansible com falha.
+
+
+NOTE: Os códigos de erro fornecidos nesta página são apenas para referência. Entre em Contato com a equipe de suporte se o erro persistir ou se não houver nenhuma resolução mencionada.
+
+A tabela a seguir lista os códigos de erro e os nomes de arquivo correspondentes.
+
+|===
+
+
+| *Código de erro* | *Nome do script* 
+
+
+| 00 | firstboot-network-config.pl, modo de implantação 
+
+
+| 01 | firstboot-network-config.pl, atualização do modo 
+
+
+| 02 | firstboot-inputs-validation.pl 
+
+
+| 03 | firstboot-deploy-otv-ng.pl, implantar, HA 
+
+
+| 04 | firstboot-deploy-otv-ng.pl, implantar, não HA 
+
+
+| 05 | firstboot-deploy-otv-ng.pl, reinicie 
+
+
+| 06 | firstboot-deploy-otv-ng.pl, upgrade, HA 
+
+
+| 07 | firstboot-deploy-otv-ng.pl, upgrade, não HA 
+
+
+| 08 | firstboot-otv-recovery.pl 
+
+
+| 09 | post-deploy-upgrade.pl 
+|===
+Os últimos três dígitos do código de erro indicam o erro de fluxo de trabalho específico dentro do script:
+
+|===
+
+
+| *Código de erro de atualização* | *Fluxo de trabalho* | *Resolução* 
+
+
+| 068 | A reversão de pacotes Debian falhou | Use a recuperação baseada em snapshot ou zero RPO e tente fazer a atualização novamente. 
+
+
+| 069 | Falha ao restaurar ficheiros | Use a recuperação baseada em snapshot ou zero RPO e tente fazer a atualização novamente. 
+
+
+| 070 | Falha ao eliminar cópia de segurança | - 
+
+
+| 071 | O cluster do Kubernetes não estava íntegro | - 
+
+
+| 074 | A montagem ISO falhou | Verifique o /var/log/upgrade-run.log e tente atualizar novamente. 
+
+
+| 075 | As pré-verificações de atualização falharam | Tente novamente a atualização. 
+
+
+| 076 | A atualização do registo falhou | Use a recuperação baseada em snapshot ou zero RPO e tente fazer a atualização novamente. 
+
+
+| 077 | A reversão do Registro falhou | Use a recuperação baseada em snapshot ou zero RPO e tente fazer a atualização novamente. 
+
+
+| 078 | A atualização do operador falhou | Use a recuperação baseada em snapshot ou zero RPO e tente fazer a atualização novamente. 
+
+
+| 079 | A reversão do operador falhou | Use a recuperação baseada em snapshot ou zero RPO e tente fazer a atualização novamente. 
+
+
+| 080 | A atualização dos serviços falhou | Use a recuperação baseada em snapshot ou zero RPO e tente fazer a atualização novamente. 
+
+
+| 081 | Falha na reversão de serviços | Use a recuperação baseada em snapshot ou zero RPO e tente fazer a atualização novamente. 
+
+
+| 082 | Falha ao eliminar imagens antigas do contentor | Use a recuperação baseada em snapshot ou zero RPO e tente fazer a atualização novamente. 
+
+
+| 083 | A eliminação da cópia de segurança falhou | Use a recuperação baseada em snapshot ou zero RPO e tente fazer a atualização novamente. 
+
+
+| 084 | Falha ao alterar o JobManager de volta à produção | Siga os passos abaixo para recuperar/concluir a atualização. 1. Ative o Shell de Diagnóstico 2. Execute o comando: _Sudo perl /home/manut/scripts/post-deploy-upgrade.pl --postupgrade_ 3. Verifique os logs em /var/log/post-deploy-upgrade.log 
+
+
+| 087 | As etapas de pós-atualização falharam. | Execute as seguintes etapas para recuperar/concluir a atualização. 1. Ative o Shell de Diagnóstico 2. Execute _sudo perl /home/manut/scripts/post-deploy-upgrade.pl --postupgrade_ comando 3. Verifique os logs em /var/log/post-deploy-upgrade.log 
+
+
+| 088 | A configuração da rotação de log para journald falhou | Verifique as configurações de rede da VM compatíveis com o host no qual a VM está hospedada. Você pode tentar migrar a VM para outro host e reiniciar. 
+
+
+| 089 | A alteração da propriedade do registo de resumo, o ficheiro de configuração de rotação falhou | Tente novamente a atualização. 
+
+
+| 093 | A atualização do provisionador de storage dinâmico falhou | Tente novamente a atualização. 
+
+
+| 094 | A reversão do provisionador de storage dinâmico falhou | Tente novamente a atualização. 
+
+
+| 095 | Falha na atualização DO SO | Sem recuperação para atualização do SO. Os serviços de ferramentas do ONTAP são atualizados e novos pods serão executados. 
+
+
+| 096 | Instalar provisionador de storage dinâmico | Verifique os logs de atualização e tente atualizar novamente. 
+
+
+| 097 | A desinstalação de serviços para atualização falhou | Use recuperação baseada em snapshots ou RPO zero e tente fazer a atualização novamente. 
+
+
+| 098 | a cópia do segredo do provisionador de armazenamento dinâmico do sistema ntv para o namespace do provisionador de armazenamento dinâmico falhou | Verifique os logs de atualização e tente atualizar novamente. 
+
+
+| 099 | Falha ao validar a nova adição de HDD | Adicione o novo HDD a todos os nós no caso de HA e a um nó em caso de implantação não HA. 
+
+
+| 108 | Falha no script de semeadura | - 
+
+
+| 109 | o backup de dados de volume persistentes falhou | Verifique os logs de atualização e tente atualizar novamente. 
+
+
+| 110 | a restauração de dados de volume persistentes falhou | Use a recuperação baseada em snapshot ou zero RPO e tente fazer a atualização novamente. 
+
+
+| 111 | A atualização dos parâmetros de tempo limite do etcd para RKE2 falhou | Verifique os logs de atualização e tente atualizar novamente. 
+
+
+| 112 | A desinstalação do provisionador de armazenamento dinâmico falhou | - 
+
+
+| 113 | A atualização de recursos em nós secundários falhou | Verifique os logs de atualização e tente atualizar novamente. 
+|===
+
+NOTE: As ferramentas do ONTAP para VMware vSphere 10,3 são compatíveis com RPO zero.
+
+Saiba mais sobre https://kb.netapp.com/data-mgmt/OTV/VSC_Kbs/How_to_restore_ONTAP_tools_for_VMware_vSphere_if_upgrade_fails_from_version_10.0_to_10.1["Como restaurar as ferramentas do ONTAP para VMware vSphere se a atualização falhar da versão 10,0 para a 10,1"]
