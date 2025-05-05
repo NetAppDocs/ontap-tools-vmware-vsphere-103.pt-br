@@ -384,8 +384,6 @@
   <block id="b7d863d6846eaf1689410c02279f9ea6" category="doc">Adicionar um back-end de storage</block>
   <block id="442290d4045e6c10552f661da43a9706" category="paragraph">A adição de um back-end de storage permite a integração de um cluster do ONTAP.</block>
   <block id="78166ce4ccceeedfbf6aeb8682851072" category="paragraph">*Sobre esta tarefa*</block>
-  <block id="0333b8e59818e95f8c3464384f005977" category="paragraph">Para adicionar um back-end de storage a um cluster de escopo global em uma arquitetura de alocação a vários clientes, adicione o back-end de storage usando o Gerenciador de ferramentas do ONTAP. Depois de adicionar o back-end de storage ao cluster global, você deve associar o cluster aos locatários do vCenter desejados. O locatário do vCenter deve integrar as máquinas virtuais de storage (SVMs) desejadas. Isso permite que um usuário do SVM provisione o vVols datastore. É possível adicionar storage ao vCenter usando o SVM.</block>
-  <block id="91310533ef068c4c3d95d7102fd2e7da" category="paragraph">Para adicionar um back-end de storage a um cluster com escopo local, adicione seus sistemas ONTAP diretamente usando o plug-in das ferramentas ONTAP no servidor vCenter.</block>
   <block id="da6388fdc3d2fad794be9aa033101c19" category="open-title">Usando o Gerenciador de ferramentas do ONTAP</block>
   <block id="a761d3a6a5565687c80a0d269ca343c4" category="admonition">Em uma configuração de alocação a vários clientes, é possível adicionar um cluster de back-end de storage globalmente e SVM localmente para usar as credenciais de usuário do SVM.</block>
   <block id="af97740fd99b637615a0fe129d5fc42f" category="list-text">Inicie o Gerenciador de ferramentas do ONTAP a partir de um navegador da Web:<block ref="a2fad8db83c338dbc95675bd05c70607" prefix=" " category="inline-code"></block></block>
@@ -394,7 +392,6 @@
   <block id="9cb992b5ee53404c646502db030f7c27" category="list-text">Adicione o back-end de armazenamento e forneça o endereço IP do servidor ou FQDN, nome de usuário e detalhes de senha.</block>
   <block id="60f27fc86b38229b1a666fd3c7b129f1" category="admonition">LIFs de gerenciamento de endereços IPv4 e IPv6 são compatíveis.</block>
   <block id="a6fd0b4332e8ac1bd18da3d605f3f558" category="open-title">Usando a interface de usuário do cliente vSphere</block>
-  <block id="15d9ec0601efc7a09529f55671b2bf35" category="admonition">Quando você adiciona um back-end de storage usando a interface de usuário do cliente vSphere, o datastore vVols não dá suporte à adição direta de um usuário SVM.</block>
   <block id="3c4b541b5d5310d633c23010dd81989e" category="list-text">Faça login no cliente vSphere</block>
   <block id="3a3cf1aabccd549ecea01e8e5bd01415" category="list-text">Na página atalhos, selecione *Ferramentas do NetApp ONTAP* na seção plug-ins.</block>
   <block id="1371ece860fedc2eae03b50872f67242" category="list-text">Adicione o back-end de armazenamento e forneça o endereço IP do servidor, nome de usuário, senha e detalhes da porta.</block>
@@ -2164,4 +2161,6 @@
   <block id="0c72f5748e7c096b829fa8c13bdb6b7f" category="list-text">O IPv4 é o componente de endereço IP da configuração do nó, que pode ser utilizado para habilitar o acesso de shell de diagnóstico e SSH no nó para fins de depuração e manutenção.</block>
   <block id="e10687c7d1d3c93cdb138a57d9d14bdb" category="list-text">O endereço IP da interconexão do nó é usado para comunicação interna.</block>
   <block id="3e691305a01d01aac8e30b75bd1d8a27" category="cell">Endereço IP da interconexão do nó para comunicação interna</block>
+  <block id="7ffde475c4ea55e9fc7c8c11becbc141" category="paragraph">No caso de configurações de alocação a vários clientes em que o vCenter atua como locatário de um SVM associado, use o Gerenciador de ferramentas do ONTAP para adicionar o cluster. Associe o back-end de storage ao vCenter Server para mapeá-lo globalmente para a instância integrada do vCenter Server. O locatário do vCenter deve integrar as máquinas virtuais de storage (SVMs) desejadas. Isso permite que um usuário do SVM provisione o vVols datastore. É possível adicionar storage ao vCenter usando o SVM.</block>
+  <block id="112fa4a14bcd73096ce0a79df18e90c8" category="admonition">Ao configurar um back-end de storage por meio da interface de usuário do cliente vSphere, é importante observar que o armazenamento de dados vVols não oferece suporte à adição direta de um usuário SVM.</block>
 </blocks>
