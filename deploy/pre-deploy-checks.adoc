@@ -63,7 +63,7 @@ Use a seguinte Planilha para reunir as informações necessárias para as ferram
 | Endereço IP do aplicativo ONTAP Tools |  
 
 
-| Endereço IP da interconexão do nó para comunicação entre nós |  
+| Endereço IP da interconexão do nó para comunicação interna |  
 
 
 | Nome de host DNS para o primeiro nó |  
