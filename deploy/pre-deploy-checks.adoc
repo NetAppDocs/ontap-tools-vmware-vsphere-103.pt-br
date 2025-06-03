@@ -60,10 +60,10 @@ Use a seguinte Planilha para reunir as informações necessárias para as ferram
 | Requisito | O seu valor 
 
 
-| Endereço IP do aplicativo ONTAP Tools |  
+| Endereço IP para o aplicativo ONTAP Tools. Este é o endereço IP para acessar a interface web do ONTAP Tools. |  
 
 
-| Endereço IP da interconexão do nó para comunicação interna |  
+| Endereço IP virtual das ferramentas ONTAP para comunicação interna. Este endereço IP é usado para comunicação interna em uma configuração com várias instâncias das ferramentas ONTAP. Este endereço IP não deve ser o mesmo que o endereço IP do aplicativo das ferramentas ONTAP. |  
 
 
 | Nome de host DNS para o primeiro nó |  
@@ -78,7 +78,7 @@ Use a seguinte Planilha para reunir as informações necessárias para as ferram
 | Domínio de pesquisa DNS |  
 
 
-| Endereço IPv4 para o nó principal |  
+| Endereço IPv4 para o primeiro nó. É um endereço IPv4 exclusivo para a interface de gerenciamento do nó na rede de gerenciamento. |  
 
 
 | Máscara de sub-rede para o endereço IPv4 |  

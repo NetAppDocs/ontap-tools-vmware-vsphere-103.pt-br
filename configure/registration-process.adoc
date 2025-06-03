@@ -11,7 +11,7 @@ summary: Você pode Registrar o provedor VASA com uma instância do vCenter Serv
 
 
 [role="lead"]
-Você pode Registrar o provedor VASA com uma instância do vCenter Server usando as ferramentas do ONTAP para VMware vSphere. A seção Configurações do provedor VASA exibe o status de Registro do provedor VASA para o vCenter Server selecionado.
+Você pode Registrar o provedor VASA com uma instância do vCenter Server usando as ferramentas do ONTAP para VMware vSphere. A seção Configurações do provedor VASA exibe o status de Registro do provedor VASA para o vCenter Server selecionado. Em uma implantação de vários vCenters, certifique-se de ter certificados CA personalizados para cada instância do vCenter Server.
 
 .Passos
 . Faça login no cliente vSphere
