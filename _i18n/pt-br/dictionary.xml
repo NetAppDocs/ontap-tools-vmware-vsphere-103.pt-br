@@ -2164,4 +2164,5 @@
   <block id="cc2976705cd90914f7093a509084c243" category="paragraph">Ao trabalhar com várias instâncias do vCenter Server, atualize o certificado autoassinado para um certificado assinado pela autoridade de certificação (CA).</block>
   <block id="15f0aef685a07d8a64ee213328fd4abf" category="list-text">Determine as ferramentas ONTAP para o tipo de implantação do VMware vSphere a partir da primeira VM do nó.</block>
   <block id="843e69439f5c77bf5c54644b48190fc1" category="admonition">Para ferramentas ONTAP para implantação do VMware vSphere HA, você deve alterar a senha do usuário do console de manutenção no primeiro nó, que é node1.</block>
+  <block id="56564ecb20e9cb45429b432b22f216f4" category="admonition">As configurações de MPIO não se aplicam aos protocolos NVMe, NVMe/FC e NVMe/TCP.</block>
 </blocks>

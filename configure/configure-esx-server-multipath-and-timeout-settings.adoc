@@ -67,6 +67,9 @@ Configurações MPIO definem os caminhos preferidos para sistemas de armazenamen
 Em ambientes de alto desempenho, ou quando você estiver testando o desempenho com um único armazenamento de dados LUN, considere alterar a configuração de balanceamento de carga da política de seleção de caminho (PSP) de round-robin (VMW_PSP_RR) da configuração padrão de IOPS de 1000 para um valor de 1.
 
 
+NOTE: As configurações de MPIO não se aplicam aos protocolos NVMe, NVMe/FC e NVMe/TCP.
+
+
 
 === Definições NFS
 
