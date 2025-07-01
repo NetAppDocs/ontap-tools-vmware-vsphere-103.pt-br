@@ -1618,20 +1618,10 @@
   <block id="6d710894cd1d83594944bdb2f558f3dd" category="paragraph">Você pode usar a opção 'Gerenciar colunas' para ocultar ou mostrar diferentes colunas.</block>
   <block id="c46965d55afff0a89c0bb3bd26c0a653" category="summary">Ao migrar dados de storage, os back-ends de storage são integrados manualmente usando APIS REST. Ao migrar dados do provedor VASA, os dados são exportados do banco de dados Derby existente e importados para o banco de dados MongoDB.</block>
   <block id="e43b5fd407b2bc9fda1a39851a48f9bb" category="doc">Migrar das ferramentas do ONTAP para o VMware vSphere 9.x para o 10,3</block>
-  <block id="656a2ce4c62bd399a29a0cc087a7eb83" category="admonition">Após a migração das ferramentas do ONTAP para o VMware vSphere 9.x para o 10,3, os armazenamentos de dados vVols com o protocolo NVMe/FC não funcionam porque o ONTAP Tools 10,3 oferece suporte apenas a NVMe-of com datastores VMFS.</block>
   <block id="f9f52fdfc3b658d087ef0d1715cc2008" category="paragraph">Você pode migrar das ferramentas do ONTAP para as versões do VMware vSphere 9.12D1 e 9.13D2 para o 10,3.</block>
-  <block id="12f864a7f79090b1b0f169109899eb43" category="admonition">Você deve pegar o backup OVA de sua versão atual antes de atualizar para as versões de patch.</block>
-  <block id="135dda3ac3096b9bd31ceb04b513c216" category="section-title">Etapas comuns de migração</block>
-  <block id="e53a5f7966ebf538ff3fbae3277020fa" category="list-text">Adicione a instância do vCenter Server que você deseja migrar para as ferramentas do ONTAP para a versão do VMware vSphere 10,3. <block ref="fbc3413db4202f1fe331f16af6b38f13" category="inline-link-macro-rx"></block>Consulte .</block>
-  <block id="a556515aafd07bfe4c2dfa6abbaa4ccb" category="section-title">Etapas de migração do SRA</block>
-  <block id="b4c20aabb2d8056ffe9e2b60a0164bf2" category="paragraph">Antes de migrar, certifique-se de que um dos sites está em um estado protegido e o outro está em um estado de recuperação.</block>
-  <block id="de7cd16aa682868ad900edd519b06059" category="list-text">Vá para a página de gerenciamento de configuração do VMware Live Site Recovery</block>
   <block id="77efba168b5a2059c2d20a1e2673f5d1" category="paragraph">Execute estas etapas nos locais de proteção e recuperação.</block>
-  <block id="b7b423b5e37e418ae4659bcf83c729b5" category="section-title">Etapas de migração do VASA Provider</block>
   <block id="fdb5b6876d97a075f0bc2a07cd4be907" category="list-text">Implantar as ferramentas OVA para ONTAP para VMware vSphere 10,3.</block>
   <block id="a8534b379980a6bb97915d2890ad3522" category="inline-link-macro">Adicione uma instância do vCenter Server</block>
-  <block id="34b17f133cdce8c13fd8b812b8c11211" category="list-text">Adicione a instância do vCenter Server que você deseja migrar para as ferramentas do ONTAP para a versão do VMware vSphere 10,3. <block ref="946669e64e0e42585f18099dec81ec03" category="inline-link-macro-rx"></block>Consulte .</block>
-  <block id="1c9a04fa9475b21ef9be5e7bd0f30822" category="list-text">Back-end de storage integrado localmente a partir das APIs de servidor do plug-in vCenter remoto. Adicione armazenamento como escopo local para migração.</block>
   <block id="4b2e39d58448cd6246edaab6e2789245" category="paragraph">*Método HTTP e endpoint*</block>
   <block id="0b0231c1815d06ad4701a091ce91a740" category="paragraph">Essa chamada de API REST usa o método e o endpoint a seguir.</block>
   <block id="d40e9450da0b47980b8d20417aa05da7" category="cell">*Método HTTP*</block>
@@ -1640,16 +1630,13 @@
   <block id="b46b241331d5bfe90afd25ec36605c07" category="paragraph">*Tipo de processamento*</block>
   <block id="288aae25bc408055f50c21c991903a44" category="paragraph">Assíncrono</block>
   <block id="a62fbfbe1fa2fbcd3ff1ab71d9f0cf7a" category="paragraph">*Curl exemplo*</block>
-  <block id="80e56be2a784c57e6087b3af6db66ad9" category="paragraph">selecione "otv_ip": "10.12.13.45", "vasa_provider_credentials": "username": "vasauser", "password": "**********" "database_password": "*************"</block>
   <block id="654a9186fe9a47c1397903b9228f2c36" category="paragraph">Corpo de solicitação para outra migração de liberação:</block>
-  <block id="5cda9daf0baf81a9f615b94e32abb4a8" category="paragraph">selecione "otv_ip": "10.12.13.45", "vasa_provider_credentials": "username": "vasauser", "password": "********"</block>
   <block id="18009c9216d59118fb460184e2ec0a3d" category="paragraph">* Exemplo de saída JSON*</block>
   <block id="492fdcd87814cf3c979a27709fc29350" category="paragraph">Um objeto de tarefa é retornado. Você deve salvar o identificador do trabalho para usá-lo na próxima etapa.</block>
   <block id="372ff7cae2da4e0d6205af97a48a61eb" category="paragraph">[id]: 123, "migration_id": "d50073ce-35b4-4c51-9d2e-4ce66f802c35", "status": "running"</block>
   <block id="009dbe214d15197679fe0b95a8a01cc3" category="list-text">Pare as ferramentas do ONTAP para o provedor de armazenamento VMware vSphere 9,10/9,11/9,12/9,13 Serviço do provedor VASA a partir do console de manutenção.</block>
   <block id="ffdec42d5d13cecca850e153f75748ec" category="paragraph">Não elimine o fornecedor VASA.</block>
   <block id="4bf6186a3a16efffdaebdafdd4fcaf4b" category="paragraph">Depois que o antigo provedor VASA é interrompido, o vCenter Server faz failover para as ferramentas do ONTAP para VMware vSphere. Todos os armazenamentos de dados e VMs ficam acessíveis e são servidos a partir das ferramentas do ONTAP para VMware vSphere.</block>
-  <block id="bdfee7ad87d9004e1091e6e1762d0e84" category="paragraph">* Exemplo de entrada JSON*</block>
   <block id="f663ec26fcc5dbf0e82a2df73c30a3e3" category="paragraph">O corpo da solicitação está vazio para operação de patch.</block>
   <block id="15e560ab707fa2bf2b7b0833adbe8bb9" category="list-text">Navegue até o datastore e selecione *Summary* &gt; *VM Storage Policies*.</block>
   <block id="325367fe0120f7c1592bf3028da84bee" category="list-text">Selecione a política Storage VM e a VM correspondente</block>
@@ -2103,7 +2090,6 @@
   <block id="ce0ce3ea98d033e77751261b2720fefe" category="sidebar">Gerenciar senhas</block>
   <block id="b380edc36b1ed383fd72d0b93d5857c5" category="sidebar">Gerenciar a proteção do cluster de host</block>
   <block id="430cbe0d7261af556b6d05cea5b38e0e" category="sidebar">Modificar a proteção do cluster do host</block>
-  <block id="9ebcd4f583a00c985808cafa9e416f71" category="sidebar">Migrar as ferramentas do ONTAP para o VMware vSphere 9.x para o 10,3</block>
   <block id="f724dfae8a2bb3b34e049dcedf88d10d" category="sidebar">Proteja armazenamentos de dados e máquinas virtuais</block>
   <block id="d8ddfdd9298e5862ca00168195c4be29" category="sidebar">Proteja usando proteção SRA</block>
   <block id="a239701adb72159a71164b036c18a53a" category="sidebar">Configurar recursos do site protegidos e de recuperação</block>
@@ -2117,30 +2103,20 @@
   <block id="7ffde475c4ea55e9fc7c8c11becbc141" category="paragraph">No caso de configurações de alocação a vários clientes em que o vCenter atua como locatário de um SVM associado, use o Gerenciador de ferramentas do ONTAP para adicionar o cluster. Associe o back-end de storage ao vCenter Server para mapeá-lo globalmente para a instância integrada do vCenter Server. O locatário do vCenter deve integrar as máquinas virtuais de storage (SVMs) desejadas. Isso permite que um usuário do SVM provisione o vVols datastore. É possível adicionar storage ao vCenter usando o SVM.</block>
   <block id="112fa4a14bcd73096ce0a79df18e90c8" category="admonition">Ao configurar um back-end de storage por meio da interface de usuário do cliente vSphere, é importante observar que o armazenamento de dados vVols não oferece suporte à adição direta de um usuário SVM.</block>
   <block id="cbc2b2dc8b4ce185c5ef0381522a3cfc" category="admonition">Você não precisa de uma conta de administrador para adicionar instâncias do vCenter às ferramentas do ONTAP. Você pode criar uma função personalizada sem a conta de administrador com permissões limitadas. <block ref="31ec071db09c0fa81e221bfe3044a965" category="inline-link-macro-rx"></block>Consulte para obter detalhes.</block>
-  <block id="a9919517205886b598c13e9032a09059" category="paragraph">Durante a migração de dados de storage, os back-ends de storage são integrados manualmente usando APIS REST. A migração de dados do provedor VASA envolve exportar dados do banco de dados Derby existente e importá-los para o banco de dados MongoDB.</block>
-  <block id="b7760802f5560cd215cd7dee93951bfd" category="admonition">A migração de ferramentas do ONTAP para o VMware vSphere 9.XX só é necessária quando se usa o provedor VASA e vVols.</block>
-  <block id="3b399f32cd58f37d5c326f406d9b291f" category="list-text">Implante O OVA para as ferramentas do ONTAP para a versão do VMware vSphere 10,3.</block>
-  <block id="7949ac5c6b3d4313dd4d5969af832925" category="list-text">Integre o back-end de storage localmente usando o plug-in de ferramentas do ONTAP no servidor vCenter. Adicione o armazenamento como um armazenamento com escopo local para migração.</block>
   <block id="46ec37b71ccf8c993dcbf7cb78fe2af7" category="admonition">Não inicie a migração se o failover tiver sido concluído, mas a reproteção estiver pendente. Certifique-se de que o processo de reproteção está concluído antes de prosseguir com a migração. Se um failover de teste estiver em andamento, limpe o failover de teste e inicie a migração.</block>
   <block id="da2f48d729eae4ca1010b4a077b66b02" category="list-text">Siga estas etapas para excluir o adaptador SRA das ferramentas do ONTAP para VMware vSphere 9.xx na recuperação de site da VMware:</block>
   <block id="b2c26a87d051d5889e6d2e4ab1fc79de" category="list-text">Vá para a seção *Storage Replication Adapter*.</block>
-  <block id="b80a5fe26546f4090c014df2108347ab" category="list-text">No menu de elipses, selecione *Reset Configuration*.</block>
   <block id="1ab7bd22ce5077185a70517ea0db34ec" category="list-text">No menu de elipses, selecione *Delete*.</block>
   <block id="108af0df3d39dcc8f1002f2564a37e20" category="list-text">Instale as ferramentas do ONTAP para o adaptador VMware vSphere 10,3 SRA usando as etapas em <block ref="9b6610ae0d9b3f2df042445cc8433cf4" category="inline-link-macro-rx"></block>.</block>
   <block id="e3e32085ef48d00b185f9ae05a428520" category="list-text">Na página de interface de usuário do VMware Live Site Recovery, execute as operações *Discover Arrays* e *Discover Devices* e confirme se os dispositivos são exibidos como antes da migração.</block>
   <block id="6136a81a0ac0e402d6b510c2488f1d36" category="list-text">Para ativar A PORTA Derby 1527 nas ferramentas existentes do ONTAP para VMware vSphere, ative o usuário raiz e faça login na CLI por meio de SSH. Em seguida, execute o seguinte comando:</block>
   <block id="b5bf1eb9fc501e53457cde004db09086" category="list-text">Emita a seguinte API do Swagger ou no Postman para migrar.</block>
-  <block id="45b4835ddd7ad16076afa0b51bf12d2a" category="paragraph">Curl -X POST<block ref="a9f22201e72a1b8e399b24ae5e861616" category="inline-link-rx"></block></block>
-  <block id="d15764d5088db3a571ec9ccf86341552" category="paragraph">Você pode acessar o Swagger através deste URL: 'https://$FQDN_IP_PORT/, por exemplo<block ref="1f852f41a6044590b385b39eaef5531e" category="inline-link-rx"></block>: .</block>
   <block id="54caf31d7246402cdcb6cd5c255c5c64" category="paragraph">Curl -X POST<block ref="4042f1acb8fe47ca556f8b938a8d6e08" category="inline-link-rx"></block></block>
-  <block id="40e0776d71fd5d591d53e451a6006fa9" category="paragraph">Organismo de solicitação para migração de 9,12 e 9,13:</block>
   <block id="91377d2edc3d930017c1b8c4679bdb89" category="list-text">Use o seguinte URI no Swagger para verificar o status:</block>
   <block id="b02dd8a7793406878f54951af581d6f2" category="paragraph">Depois de concluir o trabalho, reveja o relatório de migração. Este relatório está incluído nos dados do trabalho e pode ser acedido a partir da resposta do trabalho.</block>
   <block id="4551975cd29f0bfb98cd73d6f5cb8388" category="inline-link-macro">Registe o Fornecedor VASA</block>
-  <block id="0edd46e4487a559e489864eebe825e64" category="list-text">Adicione as ferramentas do ONTAP para o provedor de storage do VMware vSphere ao vCenter Server e <block ref="c283b8bc021fee7e6c856fce39783a46" category="inline-link-macro-rx"></block> com as ferramentas do ONTAP para VMware vSphere.</block>
   <block id="588348e2b65e0439aeb5d92799e13781" category="inline-link-macro">Ative o fornecedor VASA</block>
   <block id="afba674b121ae477fe8d69c9920021ef" category="list-text"><block ref="3f0f412beb77bd4bc4dc7f97f661a149" category="inline-link-macro-rx"></block> Serviço em ferramentas do ONTAP para VMware vSphere 10,3.</block>
-  <block id="43278c46500368f0b18a81d5a9eabd6c" category="list-text">Os armazenamentos de dados NFS e VMFS migrados das ferramentas do ONTAP para o VMware vSphere 9.xx são visíveis nas ferramentas do ONTAP para o VMware vSphere 10,3 somente após a ativação do job de descoberta do datastore, o que pode levar até 30 minutos para ser concluído. Verifique se os armazenamentos de dados estão visíveis na página de visão geral das ferramentas do ONTAP para a página de interface de usuário do plug-in VMware vSphere.</block>
   <block id="96b2fedcc932770f843418dedfe7f004" category="list-text">Execute a migração de patch usando a seguinte API no Swagger ou no Postman:</block>
   <block id="99a490d727b23ee47f3b441a7342d420" category="paragraph">Curl -X PATCH <block ref="fd07e34d045cf59e25acb7168e60f530" category="inline-link-rx"></block></block>
   <block id="84a75f6b0a005e405f2680d9ab007b12" category="admonition">UUID é a migração UUID retornada em resposta à API pós-migração.</block>
@@ -2165,4 +2141,131 @@
   <block id="15f0aef685a07d8a64ee213328fd4abf" category="list-text">Determine as ferramentas ONTAP para o tipo de implantação do VMware vSphere a partir da primeira VM do nó.</block>
   <block id="843e69439f5c77bf5c54644b48190fc1" category="admonition">Para ferramentas ONTAP para implantação do VMware vSphere HA, você deve alterar a senha do usuário do console de manutenção no primeiro nó, que é node1.</block>
   <block id="56564ecb20e9cb45429b432b22f216f4" category="admonition">As configurações de MPIO não se aplicam aos protocolos NVMe, NVMe/FC e NVMe/TCP.</block>
+  <block id="d12f6b7d9e336bb21523e27a7954a424" category="doc">Entenda igroups e políticas de exportação em ferramentas ONTAP para VMware vSphere</block>
+  <block id="27fa3073e12d15edf2d9cd750cf92bd4" category="paragraph">Grupos iniciadores (igroups) são tabelas de nomes de portas mundiais (WWPNs) de hosts de protocolo FC ou nomes de nós qualificados de hosts iSCSI. Você pode definir grupos e mapeá-los para LUNs para controlar quais iniciadores têm acesso a LUNs.</block>
+  <block id="138a039e4dddf6a33f72d3080556a984" category="paragraph">Nas ferramentas ONTAP para VMware vSphere 9.x, os igroups eram criados e gerenciados em uma estrutura plana, onde cada datastore no vCenter era associado a um único igroup. Esse modelo limitava a flexibilidade e a reutilização de igroups em múltiplos datastores. As ferramentas ONTAP para VMware vSphere 10.x introduzem igroups aninhados, onde cada datastore no vCenter é associado a um igroup pai, enquanto cada host é vinculado a um igroup filho sob esse pai. Você pode definir igroups pais personalizados com nomes definidos pelo usuário para reutilização em vários armazenamentos de dados, permitindo um gerenciamento mais flexível e interconectado de igroups. Entender o fluxo de trabalho dos igroups é essencial para gerenciar LUNs e datastores de forma eficaz nas ferramentas ONTAP para VMware vSphere. Diferentes fluxos de trabalho geram configurações de igroup variadas, como mostrado nos exemplos a seguir:</block>
+  <block id="ae993cdc1fd6c1873ab68a1c6ee58ead" category="admonition">Os nomes mencionados são apenas para fins ilustrativos e não se referem a nomes de igroups reais. Os igroups gerenciados pelas ferramentas ONTAP usam o prefixo "otv_". Igroups personalizados podem receber qualquer nome.</block>
+  <block id="cf5f3091e30dee6597885d8c0e0c357f" category="cell">Prazo</block>
+  <block id="1b63a2eb7e8a70cf1b8b669bc150e401" category="cell">DS&lt;número&gt;</block>
+  <block id="8a5227cc82d14862956938caffc1acf2" category="cell">Armazenamento de dados</block>
+  <block id="95a16b532fa8ed9188599929af9e5262" category="cell">iqn&lt;número&gt;</block>
+  <block id="edb0132f304c760893f41c94545adda7" category="cell">IQN do iniciador</block>
+  <block id="41ec3b4baa8c2ac4670f3d8b342745f4" category="cell">host&lt;número&gt;</block>
+  <block id="eebd7b1ed737a71cd20f07184995f2d6" category="cell">Anfitrião MoRef</block>
+  <block id="94c6c072c97f90138ebb2ee074be8600" category="cell">lun&lt;número&gt;</block>
+  <block id="77863eecd3628172144d619c2f03fb64" category="cell">ID LUN</block>
+  <block id="b989cbd0eba5a3051041de7edfa979e5" category="cell">&lt;NomeDS&gt;GrupoI&lt;número&gt;</block>
+  <block id="d8cba531cf36a19013999be13aebec3a" category="cell">igroup pai padrão (gerenciado por ferramentas ONTAP)</block>
+  <block id="3dc1d1c3dce65c0c38318e1ebbcd4dee" category="cell">&lt;Host-Moref&gt;Igroup&lt;número&gt;</block>
+  <block id="7373da93b05c2b988adcaa5fbf0edfcc" category="cell">igroup infantil</block>
+  <block id="4bd15973d38707ac9b65aaf3f989ed0f" category="cell">CustomIgroup&lt;número&gt;</block>
+  <block id="a81c9d5d7cdd61b993abfc37eaf551db" category="cell">igroup pai personalizado definido pelo usuário</block>
+  <block id="c9addbf487b919c868ba38bce10c0fec" category="cell">ClassicIgroup&lt;número&gt;</block>
+  <block id="b6c271eb9e2a9392b22e2be5c7aa3614" category="cell">Igroup usado nas versões 9.x das ferramentas ONTAP.</block>
+  <block id="0b7b29d7656d8d29ec3286a241de010e" category="paragraph-title">Exemplo 1:</block>
+  <block id="f55636419489fc39d90e3b2ec66d66d1" category="paragraph">Crie um armazenamento de dados em um único host com um iniciador</block>
+  <block id="239346122912a11ed5cbb915016a28e3" category="paragraph">*Fluxo de trabalho*: [Criar] DS1 (lun1): host1 (iqn1)</block>
+  <block id="184e7557d37448b68814a3826b88604b" category="paragraph">*Resultado*:</block>
+  <block id="29792d8650120f6afd7c0ece95876b79" category="list-text">DS1Igroup:</block>
+  <block id="337504141d62bdffc7f0b1a0e1bb16af" category="list-text">host1Igroup → (iqn1: lun1)</block>
+  <block id="71c3f3b14a29b76e7d9976e1fd92866d" category="paragraph">Um igroup pai, DS1Igroup, é criado nos sistemas ONTAP para DS1, com um igroup filho, host1Igroup, mapeado para lun1. LUNs são sempre mapeados para igroups filhos.</block>
+  <block id="2be7ab20c80a99b42fc79400ca3f36ea" category="paragraph-title">Exemplo 2:</block>
+  <block id="be3104bc1fff4c1bfb9f5da101aed986" category="paragraph">Montar o armazenamento de dados existente em um host adicional</block>
+  <block id="835065c40104234c9a8abb4875fbeba8" category="paragraph">*Fluxo de trabalho*: [Montagem] DS1 (lun1): host2 (iqn2)</block>
+  <block id="2297adf1ae6c60ea9363ce5ef2e41f52" category="list-text">host2Igroup → (iqn2: lun1)</block>
+  <block id="d2b07c984d7fce344070b5c0752a51d8" category="paragraph">Um igroup filho host2Igroup é criado e adicionado ao igroup pai existente DS1Igroup.</block>
+  <block id="2d6cceda29fb927297683321657cc7f7" category="paragraph-title">Exemplo 3:</block>
+  <block id="6e0ad0300479c496e85c7f90f364f3da" category="paragraph">Desmontar um armazenamento de dados de um host</block>
+  <block id="1042a36d4bd6b198c75db206e253d6a1" category="paragraph">*Fluxo de trabalho*: [Desmontar] DS1 (lun1): host1 (iqn1)</block>
+  <block id="99fb3d64e6243f94e6f41859fd70993d" category="paragraph">O host1Igroup é removido da hierarquia. Os igroups filhos não são excluídos explicitamente. A exclusão ocorre sob estas duas condições: • Se nenhum LUN for mapeado, o sistema ONTAP exclui o igroup filho. • Uma tarefa de limpeza agendada remove os igroups filhos pendentes sem mapeamentos de LUN. Esses cenários se aplicam apenas a igroups gerenciados por ferramentas ONTAP, não a igroups criados de forma personalizada.</block>
+  <block id="041ec4ff6ad5f804da8976d697659842" category="paragraph-title">Exemplo 4:</block>
+  <block id="e5e28486c61b67fca6b2ef177a5f9359" category="paragraph">Excluir armazenamento de dados</block>
+  <block id="4a3642a61d33fc5e86d2b97fb3ec5b26" category="paragraph">*Fluxo de trabalho*: [Excluir] DS1 (lun1): host2 (iqn2)</block>
+  <block id="a221428f85ab85b50304989ceb5f1013" category="paragraph">Os igroups pai e filho são removidos se outro repositório de dados não reutilizar o igroup pai. Os igroups filhos nunca são excluídos explicitamente.</block>
+  <block id="8c0e16266857385b0b0b181e3b641f04" category="paragraph-title">Exemplo 5:</block>
+  <block id="726d4f85c9b9eaa5f6c5968d19c3a7df" category="paragraph">Crie vários armazenamentos de dados em um igroup pai personalizado</block>
+  <block id="bea6104954555c1b763633c7a55ea6f8" category="paragraph">*Fluxo de trabalho*:</block>
+  <block id="19e99edc83cbbbcc6ab8d304178f9046" category="list-text">[Criar] DS2 (lun2): host1 (iqn1), host2 (iqn2)</block>
+  <block id="cb4835be3502172f05fc0fb1636c6f71" category="list-text">[Criar] DS3 (lun3): host1 (iqn1), host3 (iqn3)</block>
+  <block id="1349428cc30cda216cf2019786367f2e" category="list-text">CustomIgroup1:</block>
+  <block id="da0fa0c3efce4fb609fc503d43009a84" category="list-text">host1Igroup → (iqn1: lun2, lun3)</block>
+  <block id="f89b4a662e7511de5794930a38008165" category="list-text">host2Igroup → (iqn2: lun2)</block>
+  <block id="9db51efb0434c0f5d42d43e58d48a6d0" category="list-text">host3Igroup → (iqn3: lun3)</block>
+  <block id="ee0f441220124ad6f5f79f31ca2850c1" category="paragraph">O CustomIgroup1 é criado para o DS2 e reutilizado para o DS3. Os igroups filhos são criados ou atualizados sob o pai compartilhado, com cada igroup filho mapeando para seus LUNs relevantes.</block>
+  <block id="a09d3d7fa6e5e57286de75b1ba1b3b81" category="paragraph-title">Exemplo 6:</block>
+  <block id="14962f74dc2fca05f3ae890d88732a98" category="paragraph">Exclua um armazenamento de dados em um igroup pai personalizado.</block>
+  <block id="e33a694e17ff6619f6b2fe691a1d309a" category="paragraph">*Fluxo de trabalho*: [Excluir] DS2 (lun2): host1 (iqn1), host2 (iqn2)</block>
+  <block id="67b13646bf72c18d796c8bf3198f5814" category="list-text">host1Igroup → (iqn1: lun3)</block>
+  <block id="6db15a5e6a1d1e2fef5984c15cc5eb69" category="list-text">Mesmo que CustomIgroup1 não seja reutilizado, ele não é excluído.</block>
+  <block id="382a19507b1950afa51e368afebb5fcc" category="list-text">Se nenhum LUN for mapeado, o sistema ONTAP excluirá o host2Igroup.</block>
+  <block id="32af8db1601aae83c5ed7e84130e7e2f" category="list-text">O host1Igroup não é excluído, pois é mapeado para lun3 do DS3. Igroups personalizados nunca são excluídos, independentemente do status de reutilização.</block>
+  <block id="5152900fa2b4fe857b3d0f2bf9c7b1eb" category="paragraph-title">Exemplo 7:</block>
+  <block id="96c7142b58bd9e54729ddd088e808dc7" category="paragraph">Expandir o armazenamento de dados vVols (Adicionar volume)</block>
+  <block id="d5819bf04d1e61714a844702340b0d01" category="paragraph">Antes da expansão:</block>
+  <block id="4c770faced138366beb0f7a04f395d83" category="paragraph">[Expandir] DS4 (lun4): host4 (iqn4)</block>
+  <block id="51ebf26e977eb695e06cf1b254d79a30" category="list-text">DS4Igroup: host4Igroup → (iqn4: lun4)</block>
+  <block id="c367cd17021bf2e5e0481fdd6e7ae90b" category="paragraph">Após a expansão:</block>
+  <block id="6594f9252d2a17fc4bad619de20a7757" category="paragraph">[Expandir] DS4 (lun4, lun5): host4 (iqn4)</block>
+  <block id="aa5e06dab7f5d9a795d5333805806c5c" category="list-text">DS4Igroup: host4Igroup → (iqn4: lun4, lun5)</block>
+  <block id="a00c0ff3a9039b59496981135459ef0f" category="paragraph">Um novo LUN é criado e mapeado para o igroup filho existente host4Igroup.</block>
+  <block id="d8b6441496bad3b41e04f590687e0880" category="paragraph-title">Exemplo 8:</block>
+  <block id="9e8052e57e1cbe7ffc7f3aed17d3a225" category="paragraph">Reduzir o armazenamento de dados vVols (remover volume)</block>
+  <block id="a6c4fbf684b02254a93362b7f87f46b3" category="paragraph">Antes de encolher:</block>
+  <block id="392dcdd65448cf07c9c771abcd18cf1d" category="paragraph">[Encolher] DS4 (lun4, lun5): host4 (iqn4)</block>
+  <block id="8e16bef4ac0dfac3f3858a459f385130" category="paragraph">Após a redução:</block>
+  <block id="32fb6c0701827305127700e83186ed50" category="paragraph">[Encolher] DS4 (lun4): host4 (iqn4)</block>
+  <block id="44aac1af9c3e4914e749589a45fb9355" category="paragraph">O LUN especificado (lun5) não está mapeado do igroup filho. O igroup permanece ativo enquanto tiver pelo menos um LUN mapeado.</block>
+  <block id="04866dfa9cd876e3761fb20cb80cc396" category="paragraph-title">Exemplo 9:</block>
+  <block id="40f0d0153abdb5aa1e2c4d8bff1c093e" category="paragraph">Migração das ferramentas ONTAP 9 para 10 (normalização igroup)</block>
+  <block id="91d00fcabdddfee3723ef8914e95006a" category="paragraph">As ferramentas ONTAP para VMware vSPhere 9.x não oferecem suporte a igroups hierárquicos. Durante a migração para versões 10.3 ou superiores, os igroups devem ser normalizados na estrutura hierárquica.</block>
+  <block id="51d52f26bb3fadc49354d8294632607a" category="paragraph">Antes da migração:</block>
+  <block id="551fe7e3259b26ff1787acbea836b895" category="paragraph">[Migração] DS6 (lun6, lun7): host6 (iqn6), host7 (iqn7) → ClassicIgroup1 (iqn6 e iqn7: lun6, lun7)</block>
+  <block id="d5d2d4dab88d65ed1d095044810e95c5" category="paragraph">A lógica das ferramentas ONTAP 9.x permite vários iniciadores por igroup sem impor mapeamento de host um para um.</block>
+  <block id="e1511f1b44bc4c0e4bf944f12546a9e8" category="paragraph">Após a migração:</block>
+  <block id="a7d16c97cdedffae87ecd1f35d0ac590" category="paragraph">[Migração] DS6 (lun6, lun7): host6 (iqn6), host7 (iqn7) → ClassicIgroup1: otv_ClassicIgroup1 (iqn6 e iqn7: lun6, lun7)</block>
+  <block id="d993b7559126972c5320acf14fe956d9" category="paragraph">Durante a migração:</block>
+  <block id="8e328318bac6efeb120cc4c6cd3df1e7" category="list-text">Um novo igroup pai (ClassicIgroup1) é criado.</block>
+  <block id="5682831142ad0882b1551736c0a14535" category="list-text">O igroup original é renomeado com o prefixo otv_ e se torna um igroup filho.</block>
+  <block id="a1d7bef497585c5e3e0761a58c9192df" category="paragraph">Isso garante a conformidade com o modelo hierárquico.</block>
+  <block id="9d7e0542459b60f98e1d8529e2c87e4e" category="paragraph-title">Tópicos relacionados</block>
+  <block id="19dea799245ee5cf6e758f51c6b46e67" category="inline-link">Sobre os grupos</block>
+  <block id="9ec090c0889f67a04d8d16ec3fc894af" category="paragraph"><block ref="9ec090c0889f67a04d8d16ec3fc894af" category="inline-link-rx"></block></block>
+  <block id="bd4308f8ba5f92aa81fb16563206441d" category="section-title">Políticas de exportação</block>
+  <block id="483d357ed85943a2600f4700b4234595" category="paragraph">As políticas de exportação controlam o acesso aos datastores NFS nas ferramentas ONTAP para VMware vSphere. Elas definem quais clientes podem acessar os datastores e quais permissões eles têm. As políticas de exportação são criadas e gerenciadas em sistemas ONTAP e podem ser associadas aos datastores NFS para impor o controle de acesso. Cada política de exportação consiste em regras que especificam os clientes (endereços IP ou sub-redes) que têm acesso e as permissões concedidas (somente leitura ou leitura/gravação).</block>
+  <block id="df454efba6089b22bf497aa6bdafcce9" category="paragraph">Ao criar um repositório de dados NFS nas ferramentas ONTAP para VMware vSphere, você pode selecionar uma política de exportação existente ou criar uma nova. A política de exportação é então aplicada ao repositório de dados, garantindo que apenas clientes autorizados possam acessá-lo.</block>
+  <block id="e25beec793547cce47bd3965725ecdb1" category="paragraph">Ao montar um repositório de dados NFS em um novo host ESXi, as ferramentas ONTAP para VMware vSphere adicionam o endereço IP do host à política de exportação existente associada ao repositório de dados. Isso permite que o novo host acesse o repositório de dados sem criar uma nova política de exportação.</block>
+  <block id="52faf43c83a97dd583b56f8fd4367598" category="paragraph">Ao excluir ou desmontar um repositório de dados NFS de um host ESXi, o ONTAP Tools for VMware vSphere remove o endereço IP do host da política de exportação. Se nenhum outro host estiver usando essa política de exportação, ela será excluída. Ao excluir um repositório de dados NFS, o ONTAP Tools for VMware vSphere remove a política de exportação associada a esse repositório de dados se ela não for reutilizada por outros repositórios de dados. Se a política de exportação for reutilizada, ela manterá o endereço IP do host e permanecerá inalterada. Ao excluir os repositórios de dados, a política de exportação desatribui o endereço IP do host e atribui uma política de exportação padrão, para que os sistemas ONTAP possam acessá-los, se necessário.</block>
+  <block id="064bdf085906b78017207e105ea1456c" category="paragraph">A atribuição da política de exportação difere quando ela é reutilizada em diferentes repositórios de dados. Ao reutilizar a política de exportação, você pode anexá-la ao novo endereço IP do host. Ao excluir ou desmontar um repositório de dados que usa uma política de exportação compartilhada, a política não será excluída. Ela permanece inalterada e o endereço IP do host não é removido, pois é compartilhado com os outros repositórios de dados. A reutilização de políticas de exportação não é recomendada, pois pode levar a problemas de acesso e latência.</block>
+  <block id="bb53c6c29f127a298da7dd86bf00bb89" category="inline-link">Crie uma política de exportação</block>
+  <block id="c7196e0d279885126e6f1c8cf1f7195f" category="paragraph"><block ref="c7196e0d279885126e6f1c8cf1f7195f" category="inline-link-rx"></block></block>
+  <block id="81ee8f71716710530978c5d35f28e92b" category="doc">Migrar das ferramentas do ONTAP para o VMware vSphere 9.xx para o 10,3</block>
+  <block id="188f30594923570222a6f1488e852e69" category="paragraph">Mover as ferramentas NetApp ONTAP para a configuração do VMware vSphere da versão 9.xx para a 10.x exige um processo de migração devido às atualizações e melhorias significativas do produto entre as versões.</block>
+  <block id="8b6081846f56ef049557c82e5b444e2d" category="paragraph">Se você tiver datastores NFS e VMFS e nenhum datastores vVols em sua configuração, basta desinstalar o ONTAP Tools 9.xx e implantar o ONTAP Tools 10.x. No entanto, se sua configuração contiver datastores vVols, você terá que passar por um processo de migração do VASA Provider e do SRA.</block>
+  <block id="30725e73463cac6869eb16851a0b7f1f" category="paragraph">A tabela a seguir descreve o processo de migração nesses dois cenários diferentes.</block>
+  <block id="481ad82ca4c063eed4e75acc5640a962" category="cell">*Se a configuração tiver armazenamentos de dados vVols*</block>
+  <block id="122962cdef914297e7bd27106c4b08ef" category="cell">*Se a configuração contiver apenas armazenamentos de dados NFS e VMFS*</block>
+  <block id="23582373a176f3a1391b91644579b591" category="inline-link-macro">Migrar o provedor VASA</block>
+  <block id="6e4d49fbd70ad4839257ed5ced55d275" category="inline-link">Criar políticas de armazenamento de VM</block>
+  <block id="56e81eec05ba3edf697b5613dfbb8977" category="cell">Etapas: 1. <block ref="393201960d4eefccacb06cc7ccdc8cfc" category="inline-link-macro-rx"></block> 2. <block ref="2f4f76d1186f7e1931e429142840bca6" category="inline-link-rx"></block></block>
+  <block id="e07adc488f8e869e6267c0f7a1ccee08" category="inline-link-macro">Implantar e configurar ferramentas ONTAP para VMware vSphere 10.3</block>
+  <block id="690fca4891ecdd9975fe5dc5bd2a520b" category="inline-link-macro">Atualize o SRA</block>
+  <block id="ae2e6f54444edfbcea323e8f64be5184" category="inline-link">Como remover o OTV 9.xx do seu ambiente</block>
+  <block id="84645f58bac1a3ef293c7f9fa8c6c989" category="cell">Etapas: 1. Remova as ferramentas ONTAP 9.xx do seu ambiente. Consulte <block ref="9bde8c27ff3ba526e74c5e0434eb2686" category="inline-link-rx"></block> Artigo da Base de conhecimento da NetApp. 2. <block ref="ed7f206c59f60e7024e5e58e1da041e1" category="inline-link-macro-rx"></block> 3. <block ref="a29d94f131e388c7ee7c4a56d062be87" category="inline-link-macro-rx"></block> 4. <block ref="2f4f76d1186f7e1931e429142840bca6" category="inline-link-rx"></block></block>
+  <block id="4639c1f094e9032d39d96a62ddb513a1" category="admonition">Depois de migrar das ferramentas do ONTAP para o VMware vSphere 9.xx para o 10,3, os armazenamentos de dados vVols que usam o protocolo NVMe/FC tornam-se não operacionais porque o ONTAP Tools 10,3 oferece suporte ao protocolo NVMe-of somente com datastores VMFS.</block>
+  <block id="3d73385f16fa6d4daf757e66c8eab31b" category="doc">Migrar o Provedor VASA e atualizar o SRA</block>
+  <block id="74a0fcc4fbe41d518dabd4de3a069584" category="section-title">Etapas para migrar o provedor VASA</block>
+  <block id="ca5b5c9d7f0f22e3bbee025129399458" category="list-text">Adicione a instância do vCenter Server que você deseja migrar para as ferramentas do ONTAP para a versão do VMware vSphere 10,3. <block ref="946669e64e0e42585f18099dec81ec03" category="inline-link-macro-rx"></block>Consulte para obter mais informações.</block>
+  <block id="db9ce82f740ff3a9f2ad609cd7d296c9" category="list-text">Integre o backend de armazenamento localmente a partir das APIs do servidor vCenter para o plug-in de ferramentas ONTAP.</block>
+  <block id="c31397b4be5939d5bf72a8bb0faf9443" category="paragraph">Você pode acessar o Swagger através deste URL: 'https://$FQDN_IP_PORT/, por exemplo<block ref="31b962e36589b3bd2081bfb7d028723f" category="inline-link-rx"></block>: .</block>
+  <block id="6e086f74a5eaa2061811529e1d6a623e" category="paragraph">curl -X POST <block ref="c5820eec1fb061702ab2f34b24d1d295" category="inline-link-rx"></block> \ --header 'x-auth: &lt;token_de_autenticação&gt;' \ --header 'Tipo de conteúdo: aplicativo/json' \ --data '{ "otv_ip": "xx.xx.xx.xx", "vasa_provider_credentials": { "nome de usuário": "xxxxx", "senha": "******" }, "senha_do_banco_de_dados": "******" }'</block>
+  <block id="684e740f5c7b2c5d6085a2342428c783" category="paragraph">{ "otv_ip": "xx.xx.xx.xx", "vasa_provider_credentials": { "nome de usuário": "xxxxx", "senha": "*******" } }</block>
+  <block id="fafb1a9cdf3a5eb6029da27aa9e99060" category="list-text">Adicione as ferramentas ONTAP para o provedor de armazenamento VMware vSphere ao vCenter Server e <block ref="c283b8bc021fee7e6c856fce39783a46" category="inline-link-macro-rx"></block> com ferramentas ONTAP para VMware vSphere.</block>
+  <block id="abb218554e93c229e9093816b59ec169" category="list-text">Os armazenamentos de dados NFS e VMFS migrados das ferramentas do ONTAP para o VMware vSphere 9.xxx são visíveis nas ferramentas do ONTAP para o VMware vSphere 10,3 somente após a ativação do job de descoberta do datastore, o que pode levar até 30 minutos para ser concluído. Verifique se os armazenamentos de dados estão visíveis na página de visão geral das ferramentas ONTAP para a página de interface do usuário do plug-in VMware vSphere.</block>
+  <block id="3ce8158207209ed6b060c0d6db6b685d" category="section-title">Etapas para atualizar o adaptador de replicação de armazenamento (SRA)</block>
+  <block id="507fcd9c144d0cee8403de3b0608fc58" category="paragraph">No plano de recuperação, o site protegido refere-se ao local onde as VMs estão em execução, enquanto o site de recuperação é onde as VMs serão recuperadas. A interface do SRM exibe o estado do plano de recuperação com detalhes sobre os sites protegidos e de recuperação. No plano de recuperação, os botões LIMPAR e REPROTEGER estão desabilitados, enquanto os botões TESTE e EXECUTAR permanecem habilitados. Isso indica que o site está preparado para recuperação de dados. Antes de migrar o SRA, verifique se um site está no estado protegido e o outro no estado de recuperação.</block>
+  <block id="7c4cc8f57df0d72a910b2adf9c1dfc8a" category="list-text">Vá para a página de gerenciamento de configuração do VMware Live Site Recovery</block>
+  <block id="3f6debbe365887c1e9cead81caac7ed5" category="list-text">No menu de elipses, selecione *Reset Configuration*.</block>
+  <block id="d416ef8edb2844634dbe8cfff2e77f9a" category="sidebar">Entenda igroups e políticas de exportação</block>
+  <block id="019227f341a3522deb6e80d962611b44" category="sidebar">Migrar as ferramentas do ONTAP para o VMware vSphere 9.xx para o 10,3</block>
+  <block id="d619f73b597358ef5140938f37254d97" category="sidebar">Migre para as ferramentas ONTAP mais recentes para VMware vSphere</block>
 </blocks>
