@@ -2026,7 +2026,6 @@
   <block id="cd457aeee08a9f6476660a1f15284160" category="paragraph">Depois de adicionar o disco rígido, atualize os recursos da VM para as respetivas configurações e reinicie a VM principal.</block>
   <block id="82c4bde04ac809c6d15f232949e072ce" category="paragraph">Será criado um novo HDD. O provisionador de storage dinâmico usa esse HDD para gerar ou replicar volumes.</block>
   <block id="b06f0e274f6c746f0d30521b5c7f392e" category="list-text">Faça o upload das ferramentas do ONTAP para a ISO de atualização do VMware vSphere para a biblioteca de conteúdo.</block>
-  <block id="dd5382558ec4a47dfbc203fb25698772" category="list-text">Na página da VM principal, selecione *ações* &gt; *Editar configurações*</block>
   <block id="ef9e53e40d78d57abe78283a3603eb4e" category="list-text">Selecione o arquivo ISO da biblioteca de conteúdo na janela de configurações de edição no campo *unidade de CD/DVD*.</block>
   <block id="54a029420d74c0dff69239155cf510b5" category="inline-image-macro">Editar definições</block>
   <block id="2c2d3019834934bb25449edddc396321" category="list-text">Selecione o ficheiro ISO e selecione *OK*. Selecione a caixa de verificação Connected (ligado) no campo *CD/DVD drive* (unidade de CD/DVD). <block ref="af57a506b85774ef3a9f849e2b26e258" category="inline-image-macro-rx" type="image"></block></block>
@@ -2268,4 +2267,7 @@
   <block id="d416ef8edb2844634dbe8cfff2e77f9a" category="sidebar">Entenda igroups e políticas de exportação</block>
   <block id="019227f341a3522deb6e80d962611b44" category="sidebar">Migrar as ferramentas do ONTAP para o VMware vSphere 9.xx para o 10,3</block>
   <block id="d619f73b597358ef5140938f37254d97" category="sidebar">Migre para as ferramentas ONTAP mais recentes para VMware vSphere</block>
+  <block id="a928a1b805644ea87a643f7f8d60a477" category="list-text">Na página principal da VM, selecione *Ações* &gt; *Editar configurações*. Para identificar o nome da máquina virtual principal:</block>
+  <block id="75a86edd37c9b2122be450b28fa09149" category="list-text">Ative o shell de diagnóstico em qualquer nó.</block>
+  <block id="e016d50ae26af4214e6a864c1c2c8db5" category="list-text">Execute o seguinte comando:<block ref="1ebe86b64a17c55ae52f4488cffae75f" prefix=" " category="inline-code"></block></block>
 </blocks>

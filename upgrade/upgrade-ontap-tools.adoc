@@ -128,7 +128,13 @@ Será criado um novo HDD. O provisionador de storage dinâmico usa esse HDD para
 
 .Passos
 . Faça o upload das ferramentas do ONTAP para a ISO de atualização do VMware vSphere para a biblioteca de conteúdo.
-. Na página da VM principal, selecione *ações* > *Editar configurações*
+. Na página principal da VM, selecione *Ações* > *Editar configurações*. Para identificar o nome da máquina virtual principal:
++
+.. Ative o shell de diagnóstico em qualquer nó.
+.. Execute o seguinte comando:
+`grep sourceHost /opt/netapp/meta/ansible_vars.yaml`
+
+
 . Selecione o arquivo ISO da biblioteca de conteúdo na janela de configurações de edição no campo *unidade de CD/DVD*.
 . Selecione o ficheiro ISO e selecione *OK*. Selecione a caixa de verificação Connected (ligado) no campo *CD/DVD drive* (unidade de CD/DVD). image:../media/primaryvm-edit-settings.png["Editar definições"]
 . No vCenter Server, abra um console para as ferramentas do ONTAP.
