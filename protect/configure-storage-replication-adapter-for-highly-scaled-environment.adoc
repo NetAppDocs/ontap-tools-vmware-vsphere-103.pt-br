@@ -54,7 +54,7 @@ Definir um valor alto (por exemplo: 99999)
 |===
 Você também deve ativar a `StorageProvider.autoResignatureMode` opção.
 
- https://techdocs.broadcom.com/us/en/vmware-cis/live-recovery/live-site-recovery/9-0/how-do-i-protect-my-environment/advanced-srm-configuration/reconfigure-srm-settings/change-storage-provider-settings.html["Altere as definições do fornecedor de armazenamento"]Consulte para obter mais informações sobre como modificar as definições do fornecedor de armazenamento.
+Consulte  https://techdocs.broadcom.com/us/en/vmware-cis/live-recovery/live-site-recovery/9-0/how-do-i-protect-my-environment/advanced-srm-configuration/reconfigure-srm-settings/change-storage-provider-settings.html["Altere as definições do fornecedor de armazenamento"^] para obter mais informações sobre como modificar as configurações do Storage Provider.
 
 
 
@@ -65,4 +65,4 @@ Quando você atinge um tempo limite, aumente os valores de `storage.commandTimeo
 
 NOTE: O intervalo de tempo limite especificado é o valor máximo. Não é necessário esperar que o tempo limite máximo seja atingido. A maioria dos comandos termina dentro do intervalo de tempo limite máximo definido.
 
- https://techdocs.broadcom.com/us/en/vmware-cis/live-recovery/live-site-recovery/9-0/how-do-i-protect-my-environment/advanced-srm-configuration/reconfigure-srm-settings/change-storage-settings.html["Altere as definições de armazenamento"]Consulte para modificar as definições do fornecedor de SAN.
+Consulte  https://techdocs.broadcom.com/us/en/vmware-cis/live-recovery/live-site-recovery/9-0/how-do-i-protect-my-environment/advanced-srm-configuration/reconfigure-srm-settings/change-storage-settings.html["Altere as definições de armazenamento"^] para modificar as configurações do provedor SAN.

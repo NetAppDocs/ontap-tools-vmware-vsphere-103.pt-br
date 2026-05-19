@@ -180,12 +180,10 @@
   <block id="9ffd131623ad515701813a71121ab8a3" category="doc">Principais conceitos e termos</block>
   <block id="fde1abb5537b55c34521d414267b3f70" category="section-title">Sistemas ASA r2</block>
   <block id="e995d56efd9e31d97825dd79be4d1383" category="inline-link">Saiba mais sobre os sistemas de armazenamento ASA R2</block>
-  <block id="cea51b5f4b8c25d096d54257d5d0348e" category="paragraph">Os novos sistemas NetApp ASA R2 fornecem uma solução unificada de hardware e software que cria uma experiência simplificada específica para as necessidades dos clientes somente de SAN.<block ref="f9c69c3c94cab41a57233cdf7452c3d6" category="inline-link-rx"></block>.</block>
   <block id="d8656f55a37738b40be6ef5801f660e5" category="section-title">Autoridade de certificação (CA)</block>
   <block id="3375ac95b6aa8b93b0b9e4560f5a9835" category="paragraph">A CA é uma entidade confiável que emite certificados SSL (Secure Sockets Layer).</block>
   <block id="ae9e13b66877a85be97724063f459ec2" category="section-title">Grupo de consistência</block>
   <block id="eba11c7a4079ec571b88361adcae2df5" category="inline-link">grupo de consistência</block>
-  <block id="0668b41054907094c1a4aab4f8e838d1" category="paragraph">Um grupo de consistência é uma coleção de volumes que são gerenciados como uma única unidade. No ONTAP, os grupos de consistência fornecem gerenciamento fácil e uma garantia de proteção para um workload de aplicações que abrange vários volumes. Saiba mais<block ref="53f778179cc7ee2da9dcd6ff88e07f22" category="inline-link-rx"></block> sobre o .</block>
   <block id="ab475951501b4995dc2913e61372d546" category="section-title">Pilha dupla</block>
   <block id="6fad70424d056d4284134202caa28cae" category="paragraph">Uma rede de pilha dupla é um ambiente de rede que suporta o uso simultâneo de endereços IPv4 e IPv6.</block>
   <block id="87657b14ac822b0f1c3f5984ab602336" category="section-title">Alta disponibilidade (HA)</block>
@@ -202,7 +200,6 @@
   <block id="881eb19c557d05be93005ed4bcf1f120" category="paragraph">RPO é uma medida da frequência com que o backup ou a replicação dos dados. Ele representa o ponto no tempo para o qual os dados devem ser recuperados após uma interrupção para retomar as operações de negócios. Por exemplo, se uma organização tiver um RPO de 4 horas, poderá tolerar a perda de até 4 horas de dados em caso de desastre.</block>
   <block id="a09155a336a104b7f9cfa8576cc317bb" category="section-title">SnapMirror ative Sync (SMAS)</block>
   <block id="c0b79db5f258f0c991a383cbdbf001dd" category="inline-link">Sincronização ativa do SnapMirror</block>
-  <block id="cc3360d4f57f433c4bcf1fbb7183ebb7" category="paragraph">O SnapMirror active Sync permite que os serviços empresariais continuem operando mesmo em uma falha completa do local, com suporte ao failover de aplicações de forma transparente, usando uma cópia secundária. A intervenção manual nem o script personalizado são necessários para acionar um failover com a sincronização ativa do SnapMirror. Lear mais sobre<block ref="51ec33761f23a6cc5cbb85c996201f16" category="inline-link-rx"></block>.</block>
   <block id="bd605fff7af6a2da2d78ab96c4c19217" category="section-title">Back-ends de armazenamento</block>
   <block id="e11e4e825b2240bfaf05656d41f53cd9" category="paragraph">Os backends de armazenamento são a infraestrutura de armazenamento subjacente que o host ESXi usa para armazenar arquivos de máquina virtual, dados e outros recursos. O back-end de armazenamento permite que o host ESXi acesse e gerencie dados persistentes, fornecendo a capacidade de armazenamento e o desempenho necessários para o ambiente virtualizado.</block>
   <block id="410414402089bdca884f44be14088a59" category="section-title">Adaptador de replicação de armazenamento (SRA)</block>
@@ -227,7 +224,6 @@
   <block id="f342ea0503bb6e23ae2d63b919acac27" category="paragraph">O VAAI é um conjunto de APIs que permite a comunicação entre os hosts do VMware vSphere ESXi e os dispositivos de armazenamento. As APIs incluem um conjunto de operações primitivas usadas pelos hosts para descarregar operações de storage para o array. O VAAI pode fornecer melhorias significativas de desempenho para tarefas com uso intenso de storage.</block>
   <block id="adbcecad06ff22a439836e6c9002cc82" category="section-title">Cluster de armazenamento vSphere Metro</block>
   <block id="fdaedd61903be1be2102df0b95fd62f8" category="inline-link">Cluster de armazenamento do VMware vSphere Metro</block>
-  <block id="ab214a77aca7f1a5595c69a10b7f0c9d" category="paragraph">O vSphere Metro Storage Cluster (vmsc) é uma tecnologia que permite e suporta o vSphere em uma implantação de cluster estendida. As soluções vmsc são compatíveis com o NetApp MetroCluster e o SnapMirror ative Sync (anteriormente SMBC). Essas soluções fornecem continuidade de negócios aprimorada em caso de falha de domínio. O modelo de resiliência é baseado em suas escolhas de configuração específicas. Saiba mais<block ref="fae35a77d8fa39590c619f954aeac240" category="inline-link-rx"></block> sobre o .</block>
   <block id="0b005ce81ed4bd887cfab261d9070079" category="section-title">Armazenamento de dados vVols</block>
   <block id="db07ee4ed1ddb3f939892b140a23cd3a" category="paragraph">O datastore vVols é uma representação lógica do datastore de um contentor vVols que é criado e mantido por um provedor VASA.</block>
   <block id="6772d57ff19ee93553d25bf56f393392" category="section-title">RPO zero</block>
@@ -621,30 +617,23 @@
   <block id="7f6c7913516e4767bc8bd35a63c191e8" category="list-text">Mapear o SVM para agregar usuário do SVM no sistema de storage ASA R2.</block>
   <block id="a0846a676cbd19d7413fe8b8bc2f8bd7" category="list-text">Configure o host ESXi se estiver usando o protocolo NVMe/TCP:</block>
   <block id="e08175c6fa64cba68719dea85ebd9d34" category="inline-link">Guia de compatibilidade da VMware</block>
-  <block id="72b09b662b0e75361f91362d0adfde15" category="list-text">Reveja o.<block ref="a6d0d92aff977bda14584dc7d272469a" category="inline-link-rx"></block></block>
   <block id="e9e4d01bffe13c2dbe5e4d57dc2b4ed5" category="admonition">O VMware vSphere 7,0 U3 e versões posteriores são compatíveis com o protocolo NVMe/TCP. No entanto, o VMware vSphere 8,0 e a versão posterior são recomendados.</block>
   <block id="af32540d65b68dd4ffe99fa4f536b21e" category="list-text">Valide se o fornecedor da placa de interface de rede (NIC) suporta NIC ESXi com protocolo NVMe/TCP.</block>
   <block id="14db2df8fb05123f2db51ba24cbb8101" category="list-text">Configure a NIC ESXi para NVMe/TCP de acordo com as especificações do fornecedor da NIC.</block>
   <block id="4f425bfd3451c6bcedd3fd5a1ce0a26d" category="inline-link">Configure a vinculação VMkernel para o adaptador NVMe sobre TCP</block>
   <block id="6d42fe15ef428c6dc66bed1e59a4e237" category="inline-link">Configurando o NVMe em TCP no ESXi</block>
-  <block id="e4365b2f9588eb138888d2bae6c6ac55" category="list-text">Ao usar a versão do VMware vSphere 7, siga as instruções no site da VMware<block ref="6b6e21be7e83380915b7a93b5de98cc6" category="inline-link-rx"></block> para configurar a vinculação de portas NVMe/TCP. Ao usar a versão do VMware vSphere 8, siga<block ref="5075091467dfddb38b411ec1bb554877" category="inline-link-rx"></block>o , para configurar a vinculação de porta NVMe/TCP.</block>
   <block id="a36819c9a38cba7c918742e034acfe59" category="inline-link">Habilite o NVMe em adaptadores de software RDMA ou NVMe em TCP</block>
   <block id="521a15c47fb41d8055141333f4c3f248" category="inline-link">Adicionar software NVMe em adaptadores RDMA ou NVMe em TCP</block>
-  <block id="0738bb2742892ec72b20fc7b75fe9434" category="list-text">Para a versão do VMware vSphere 7, siga as instruções na página<block ref="562342ed7eb0295ae9f7a72ea788d31d" category="inline-link-rx"></block> para configurar adaptadores de software NVMe/TCP. Para a versão do VMware vSphere 8, siga<block ref="1f8f8787602f2f92045aa29b0a3fa467" category="inline-link-rx"></block> para configurar os adaptadores de software NVMe/TCP.</block>
   <block id="8fd43ee482a4e281b8feee6762fb22d2" category="inline-link-macro">Descubra sistemas de storage e hosts</block>
   <block id="f897e941469c1def0ceaad5904784393" category="inline-link">Como configurar o NVMe/TCP com o vSphere 8,0 Update 1 e o ONTAP 9.13,1 para datastores VMFS</block>
-  <block id="9d596e014ec247e8a36a9d698795a54f" category="list-text">Execute <block ref="c076a6b54534640d64418e3f25ccabbb" category="inline-link-macro-rx"></block> uma ação no host ESXi. Para obter mais informações,<block ref="08964a7c7e6cd9155ed7286907a68824" category="inline-link-rx"></block> consulte .</block>
   <block id="b52744b7fe6a50a639b45ebe19c17f96" category="list-text">Se você estiver usando o protocolo NVMe/FC, execute as seguintes etapas para configurar o host ESXi:</block>
   <block id="0d2e4cff54d6f550e6b15a47007a161c" category="list-text">Habilite o NVMe sobre Fabrics (NVMe-of) no(s) host(s) ESXi.</block>
   <block id="802068251371051bc6ae5a5f001b4460" category="list-text">Zoneamento SCSI completo.</block>
   <block id="5f4022a89fa2916b88e95fd012e1aa5d" category="list-text">Certifique-se de que os hosts ESXi e o sistema ONTAP estejam conetados em uma camada física e lógica.</block>
   <block id="e453c56da63764c242859f9bf8ca4931" category="inline-link">Configurar um SVM para FC</block>
-  <block id="e6d87707afb4e94b68adbca153a0d259" category="paragraph">Para configurar um protocolo ONTAP SVM para FC,<block ref="e433f2b6cff4fad70c0f444b50873bf8" category="inline-link-rx"></block> consulte .</block>
   <block id="c719ab5e5b2a188adebd62c0829a9f96" category="inline-link">Configuração de host NVMe-of para ESXi 8.x com ONTAP</block>
-  <block id="5a380329b1b069f97190a31ae38b4637" category="paragraph">Para obter mais informações sobre como usar o protocolo NVMe/FC com o VMware vSphere 8,0,<block ref="9c081245622705d0f45a94665f8c99c0" category="inline-link-rx"></block> consulte .</block>
   <block id="636da39a2033c6179a718983c5ce1222" category="inline-link">Guia de configuração de host ONTAP NVMe/FC</block>
   <block id="81ef6507a13da5635951bc5b533deb59" category="inline-link">TR-4684</block>
-  <block id="bcfcba3d84c95eb110df0649ab05c280" category="paragraph">Para obter mais informações sobre como usar o NVMe/FC com o VMware vSphere 7,0,<block ref="27816f9f9cf7e278691c8ea8c1dd01dc" category="inline-link-rx"></block> consulte e<block ref="a23d4cc1b9464bb497e26d387d612153" category="inline-link-rx"></block>.</block>
   <block id="bb9abdb0ecdc4e8ad5c61844a27d7f18" category="list-text">Selecione o tipo de armazenamento de dados VMFS.</block>
   <block id="54823624f3ec81a67f0dafc81ea0fac9" category="list-text">Insira o nome, o tamanho e as informações do protocolo do datastore no painel *Nome e Protocolo*. Se você optar por adicionar o novo datastore a um cluster de datastore VMFS existente, selecione o seletor de cluster de datastore em Opções avançadas.</block>
   <block id="4ae15faab2ddb24edfab9e1f2a21a432" category="list-text">Selecione Storage VM (VM de armazenamento) no painel *Storage* (armazenamento). Forneça o *Nome do grupo de iniciadores personalizados* na seção *Opções avançadas* conforme necessário. Você pode escolher um grupo existente para o datastore ou criar um novo grupo com um nome personalizado.</block>
@@ -699,7 +688,6 @@
   <block id="e1f59101bee140f72feebf78fe15f214" category="doc">Instale o plug-in NFS VAAI</block>
   <block id="89f7633ad6a1e114cebf9902aa42fd5c" category="paragraph">O plug-in NFS vStorage API for Array Integration (NFS VAAI) é um componente de software que integra os storage arrays VMware vSphere e NFS. Instale o plug-in NFS VAAI usando as ferramentas do ONTAP para VMware vSphere a fim de aproveitar os recursos avançados do seu storage array NFS para descarregar determinadas operações relacionadas ao storage dos hosts ESXi para o próprio storage array.</block>
   <block id="bf25ac3fc5bee2b3ec36e32661767682" category="inline-link">Plug-in NFS do NetApp para VMware VAAI</block>
-  <block id="f9fcb823ee6471ecceb63c9625d2c8fc" category="list-text">Baixe o<block ref="e6fae45561f1786d6f3534aff65b3377" category="inline-link-rx"></block> pacote de instalação.</block>
   <block id="a585389d21dd9fbdbdc15072bd5d7010" category="list-text">Montar um armazenamento de dados NFS.</block>
   <block id="dbf218ab7bc36005b7fdd93dda1f6eda" category="list-text">Selecione *Atalhos* &gt; *Ferramentas do NetApp ONTAP* na seção plug-ins.</block>
   <block id="0e57b7b27807ae2427ad1a654eca765e" category="list-text">Selecione *Settings* &gt; *NFS VAAI Tools*.</block>
@@ -714,14 +702,10 @@
   <block id="81b7f8451857d47e62047334509e0b36" category="list-text">O usuário raiz deve permanecer como root e NFSv4 deve ser permitido em todos os volumes pai de junção.</block>
   <block id="805928a0c13b6e1b2d20173f40408bd7" category="list-text">A opção de suporte VAAI precisa ser definida no servidor NFS relevante.</block>
   <block id="d9f27aaf5ae6bd3eb465792e14cafec5" category="inline-link">Configurar as políticas de exportação de NFS corretas para descarga de cópia VAAI</block>
-  <block id="93cda38e25aee6138627f64e6c259593" category="paragraph">Para obter mais informações sobre o procedimento, consulte<block ref="e6212f694a3524de381ff5a79b542f51" category="inline-link-rx"></block> o artigo da KB.</block>
   <block id="30f60d67f457bb040dffde52197a54da" category="paragraph-title">Informações relacionadas</block>
   <block id="e0996cb3275f87a00dff38d12e4715d0" category="inline-link">Suporte para VMware vStorage sobre NFS</block>
-  <block id="733a8e5c18051394b8392d2273d05f33" category="paragraph"><block ref="733a8e5c18051394b8392d2273d05f33" category="inline-link-rx"></block></block>
   <block id="8b1ffa00fa367c9e1aed3629b62d6c4f" category="inline-link">Ativar ou desativar NFSv4,0</block>
-  <block id="a4d224777c0d91e52fb09687f7cdc2ac" category="paragraph"><block ref="a4d224777c0d91e52fb09687f7cdc2ac" category="inline-link-rx"></block></block>
   <block id="56a156ef32c18392cd77249a4e9d04c5" category="inline-link">Suporte ONTAP para NFSv4,2</block>
-  <block id="26b3116c80531a47fa8562f359b1a573" category="paragraph"><block ref="26b3116c80531a47fa8562f359b1a573" category="inline-link-rx"></block></block>
   <block id="422b0793eae20199839e73ad8d631758" category="summary">O Gerenciador de ferramentas do ONTAP fornece mais controle e poder às ferramentas do ONTAP para o administrador do VMware vSphere, o que ajuda no gerenciamento geral dos dispositivos, locatários e back-ends de storage.</block>
   <block id="24f4f4c7ab0964cf8eb5030afe996e5b" category="doc">Interface de usuário do Gerenciador de ferramentas do ONTAP</block>
   <block id="4c6f1d39cef2f482d7f0bd371cb333c9" category="paragraph">As ferramentas do ONTAP para VMware vSphere são um sistema de alocação a vários clientes que pode gerenciar várias instâncias do vCenter Server. O Gerenciador de ferramentas do ONTAP fornece mais controle às ferramentas do ONTAP para o administrador do VMware vSphere sobre as instâncias gerenciadas do vCenter Server e os back-ends de storage integrados.</block>
@@ -895,7 +879,6 @@
   <block id="3af4e075c858acd892ef2371752970d3" category="list-text">Navegue até a biblioteca de conteúdo que você criou.</block>
   <block id="1b363a673c183e8f6180915f94b60037" category="list-text">Selecione *ações* à direita da página e selecione *Importar item* e importe o arquivo OVA.</block>
   <block id="3c69aed3fe79d658207798783104200f" category="inline-link">Criando e usando a Biblioteca de conteúdo</block>
-  <block id="76c9f2fd0b61e8f84a42f7ab8d5ce641" category="admonition">Para obter mais informações,<block ref="b5992e6d058c0c347b7f52b58c58c7d5" category="inline-link-rx"></block> consulte o blog.</block>
   <block id="359966f79d38ac8700101ef368573a16" category="admonition">Antes de prosseguir com a implantação, defina o DRS (Distributed Resource Scheduler) do cluster no inventário como 'Conservative'. Isso garante que as VMs não sejam migradas durante a instalação.</block>
   <block id="82b1e70d021d2ae63524015247494128" category="paragraph">As ferramentas do ONTAP para o VMware vSphere são inicialmente implantadas como uma configuração não HA. Para escalar para implantação HA, você precisará ativar o hot plug-in da CPU e o hot plug-in da memória. Você pode executar esta etapa como parte do processo de implantação ou editar as configurações da VM após a implantação.</block>
   <block id="af0ada25f4fd07661e572cca28b961df" category="list-text">Faça o download do<block ref="daf4de58883c030f033f07e61debf025" prefix=" " category="inline-code"></block> arquivo que contém binários (_.ova_) e certificados assinados para ferramentas do ONTAP para VMware vSphere no<block ref="db8756d7f65d6a8e593e69ba45adbb2e" category="inline-link-rx"></block> . Se você tiver importado o OVA para a biblioteca de conteúdo, você pode pular esta etapa e prosseguir com a próxima etapa.</block>
@@ -1059,7 +1042,6 @@
   <block id="da1bcee466e19a180f0d554d6fbf72f8" category="cell">Mais de 8</block>
   <block id="3a69b34ce86dacb205936a8094f6c743" category="cell">Grande</block>
   <block id="bff7ca9974a0352c641d1a0709ae7c9f" category="inline-link">Limites operacionais da recuperação do VMware Live Site</block>
-  <block id="4c90abc26074daa0aa69e5fcd9bac645" category="paragraph">Para obter mais informações,<block ref="39a0a12cac57df4f5e3df88c1e683703" category="inline-link-rx"></block> consulte .</block>
   <block id="d254becfd1f24aefd56d5a76da23dc90" category="paragraph">A tabela a seguir descreve as portas de rede que o NetApp usa e seus propósitos. Certifique-se de que estas portas estão abertas e acessíveis para facilitar o funcionamento e a comunicação adequados dentro do sistema. Certifique-se de que as configurações de rede necessárias estão em vigor para permitir que o tráfego nessas portas funcione corretamente. Dependendo das suas políticas de segurança, pode ser necessário configurar firewalls ou outros dispositivos de segurança para permitir esse tráfego na sua rede.</block>
   <block id="5ddcf17f54788a5bb9148e8671562c06" category="cell">*Porto*</block>
   <block id="f0585a6acfa5b4078673a8a1c0d350ac" category="cell">22 (TCP)</block>
@@ -1216,11 +1198,8 @@
   <block id="80ca6447cbd8bd1ace2853c2fc7c8028" category="list-text">Obtenha a lista de volumes do FlexVol.</block>
   <block id="a2b995300ba8f79cc278568247266c61" category="paragraph">_Kubectl descreva persistentvolumes | grep internalName | awk -F' ''print 2'_</block>
   <block id="fde79a3ad6359be293ba5687504ff1e1" category="inline-link">Remover e Registrar novamente VMs e modelos de VM</block>
-  <block id="0e430f76e438c52f413b9c67136dbe04" category="list-text">Remova as VMs do vCenter Server. Consulte a<block ref="c16fb322315174fa2c9720c74541cf45" category="inline-link-rx"></block>.</block>
   <block id="ef5b87aeaa907022daf2aa19faf9b465" category="inline-link">Eliminar um FlexVol volume</block>
-  <block id="b2dca496a096f8a331aea16e62f39944" category="list-text">Excluir volumes FlexVol do Gerenciador de sistema do ONTAP. Consulte a<block ref="eac8c90151648d7bc2ba6d1146004c9d" category="inline-link-rx"></block>. No comando CLI para excluir um volume, forneça o nome exato dos volumes FlexVol.</block>
   <block id="e38d6f0a684b3cc719c83432498db42b" category="inline-link">Visualizar e gerenciar iniciadores e grupos SAN</block>
-  <block id="5293b752fcab77f6d24ce6e77d0a5fac" category="list-text">Excluir grupos SAN do sistema de armazenamento ONTAP em caso de implantação iSCSI. Consulte a<block ref="14bc02d0e479c1e35338b733fac8ca0e" category="inline-link-rx"></block>.</block>
   <block id="317f8a592684314bc3829f0ff356fe47" category="summary">A ação Excluir datastore exclui o datastore. No caso do armazenamento de dados NFS ou VMFS, uma caixa de diálogo aparece com a lista de VMs que estão usando o armazenamento de dados.</block>
   <block id="3cd4a1ddd805e8692af529725906108e" category="doc">Excluir datastores</block>
   <block id="74c2a170a3a0431313f534b1ea7f6223" category="paragraph">A ação de remoção do armazenamento de dados é suportada em todas as ferramentas do ONTAP para armazenamentos de dados vVols descobertos ou gerenciados do VMware vSphere no vCenter Server. Essa ação permite a remoção de volumes do datastore vVols.</block>
@@ -1449,7 +1428,6 @@
   <block id="d81f900d794541aa77ab4dfbe1477ea9" category="paragraph">Atualmente, a VMware não suporta máquinas virtuais clonadas para um modelo de VM.</block>
   <block id="504756afdd8e0a45f90bb3a07484512e" category="paragraph">É suportado clone-of-Clone de uma máquina virtual protegida.</block>
   <block id="425455a0df6d10586a41711a1553bfae" category="inline-link">Criando uma Máquina Virtual para Clonagem</block>
-  <block id="681d233e491ad7e8ec82fd9193581181" category="paragraph"><block ref="276aed995f6320cbafa4bfe03cc7ac04" category="inline-link-rx"></block>Consulte para obter mais detalhes.</block>
   <block id="74aa15274c9a75ae1e9b01b9a4867fea" category="section-title">Instantâneos de máquina virtual</block>
   <block id="49e93fd9a17de8559bffcb0218844f3a" category="paragraph">Atualmente, apenas instantâneos de máquina virtual sem memória são suportados. Se a máquina virtual tiver Snapshot com memória, a máquina virtual não será considerada para proteção.</block>
   <block id="180b08fa6b9d0983aae906976c87c440" category="paragraph">Você também não pode proteger máquinas virtuais desprotegidas que tenham Snapshot de memória. Para esta versão, espera-se que você exclua o instantâneo da memória antes de ativar a proteção para a máquina virtual.</block>
@@ -1574,9 +1552,7 @@
   <block id="23829b8d6575f7cd3e20a5e92b475a9e" category="doc">Desinstale as ferramentas do ONTAP para o VMware vSphere</block>
   <block id="f54e212052df635bcc70d25302fd583e" category="paragraph">A desinstalação das ferramentas do ONTAP para VMware vSphere exclui todos os dados das ferramentas.</block>
   <block id="82a00fc1c0ae6d437f6d942c64bee898" category="list-text">Remova ou mova todas as máquinas virtuais das ferramentas do ONTAP para armazenamentos de dados gerenciados do VMware vSphere.</block>
-  <block id="4ad237c48098cfd8973e73475bded403" category="list-text">Para remover as máquinas virtuais, consulte<block ref="c16fb322315174fa2c9720c74541cf45" category="inline-link-rx"></block></block>
   <block id="41e0fa10828ee2d85cfd4c0ff833ac64" category="inline-link">Storage vMotion</block>
-  <block id="937380d419246adf3fdb369397226f82" category="list-text">Para movê-los para um datastore não gerenciado, consulte<block ref="5c1e2b1dd1aaa388da4191e5a966b959" category="inline-link-rx"></block></block>
   <block id="f0833ce92c23eb056dde238669740988" category="list-text"><block ref="523efdef8100699453c6b07ce8f4921c" category="inline-link-macro-rx"></block> Criado nas ferramentas do ONTAP para VMware vSphere.</block>
   <block id="1d920979688b28c7b10ef84d14436f95" category="list-text">Se você ativou o provedor VASA, selecione *Configurações* &gt; *Configurações do provedor VASA* &gt; *DesRegistrar* nas ferramentas do ONTAP para cancelar o Registro dos provedores VASA de todos os servidores vCenter.</block>
   <block id="02a713a12e2b216b65a52896d0728a0a" category="list-text">Desassocie todos os backends de armazenamento da instância do vCenter Server. <block ref="8f766e539ddb39a7c07c0c84dded1670" category="inline-link-macro-rx"></block>Consulte a .</block>
@@ -1672,7 +1648,6 @@
   <block id="a572a74f39a209b2a39fbc78485af141" category="paragraph">Você pode seguir as mesmas etapas para o local de recuperação usando os endereços IP e as credenciais apropriadas de gerenciamento da SVM. Na tela Habilitar pares de matrizes do assistente Adicionar Gestor de matrizes, você deve verificar se o par de matrizes correto está selecionado e se mostra pronto para ser ativado.</block>
   <block id="0789cade62ba5a348d7e1ed5a15e5429" category="summary">Depois de implantar o VMware Live Site Recovery Appliance, você deve configurar o SRA no VMware Live Site Recovery Appliance. A configuração bem-sucedida do SRA permite que o VMware Live Site Recovery Appliance se comunique com o SRA para gerenciamento de recuperação de desastres. Você deve armazenar as ferramentas do ONTAP para credenciais do VMware vSphere (endereço IP e senha de administrador) no dispositivo VMware Live Site Recovery para permitir a comunicação entre o VMware Live Site Recovery Appliance e o SRA.</block>
   <block id="ca19ccb681ec240b3ba2bef453f35015" category="paragraph">Depois de implantar o VMware Live Site Recovery Appliance, você deve configurar o SRA no VMware Live Site Recovery Appliance. A configuração bem-sucedida do SRA permite que o VMware Live Site Recovery Appliance se comunique com o SRA para gerenciamento de recuperação de desastres. Você deve armazenar as ferramentas do ONTAP para credenciais do VMware vSphere (endereço IP) no dispositivo VMware Live Site Recovery para permitir a comunicação entre o VMware Live Site Recovery Appliance e o SRA.</block>
-  <block id="b0dfff6a1c3e295ea3b778c18fd97c19" category="paragraph">Você deve ter baixado o arquivo _tar.gz_ do<block ref="2daaad32389df9c23111b0df1c3a53df" category="inline-link-rx"></block>.</block>
   <block id="21e557aeec91fdacbde971d5f1de9806" category="paragraph">A configuração do SRA no VMware Live Site Recovery Appliance armazena as credenciais SRA no VMware Live Site Recovery Appliance.</block>
   <block id="080c5fb237f3463d2cba06aa31f7be71" category="list-text">Na tela do VMware Live Site Recovery Appliance, selecione *Storage Replication Adapter* &gt; *New Adapter*.</block>
   <block id="7ebae8ab4249a32272c6182685fb369b" category="list-text">Carregue o arquivo _.tar.gz_ para o VMware Live Site Recovery.</block>
@@ -1741,12 +1716,10 @@
   <block id="8febbf8519703d62abe5d2086aa5386b" category="paragraph">Definir um valor alto (por exemplo: 99999)</block>
   <block id="c30b7c029fe2d9044307db1e0f6ea417" category="paragraph">Você também deve ativar a<block ref="227c938fa0f7b152cce7b139b698bf4c" prefix=" " category="inline-code"></block> opção.</block>
   <block id="1766c36b7d852fbd898c8f3e8757adf1" category="inline-link">Altere as definições do fornecedor de armazenamento</block>
-  <block id="88dd15368caf7bedf14a22682dd60571" category="paragraph"><block ref="5734aca103a056a246bef0954aaa8488" category="inline-link-rx"></block>Consulte para obter mais informações sobre como modificar as definições do fornecedor de armazenamento.</block>
   <block id="6deaa5e1cafca832bac1b468485b9454" category="section-title">Definições de armazenamento</block>
   <block id="5f479a62f2104046972d10f2cbf88255" category="paragraph">Quando você atinge um tempo limite, aumente os valores de<block ref="e7a7316b2dab3875c5aa0977c256ae38" prefix=" " category="inline-code"></block> e<block ref="b6c033f4806640a2a2858512cf9f8c1b" prefix=" " category="inline-code"></block> para um valor mais alto.</block>
   <block id="00a510939945fb6eb144a70baf6f9fd4" category="admonition">O intervalo de tempo limite especificado é o valor máximo. Não é necessário esperar que o tempo limite máximo seja atingido. A maioria dos comandos termina dentro do intervalo de tempo limite máximo definido.</block>
   <block id="09662246d40be3f3890675feb3a8d887" category="inline-link">Altere as definições de armazenamento</block>
-  <block id="df2b33876e76d1c72ae662df2c58a198" category="paragraph"><block ref="cfe8edd9f380882a23e15b320dd2350a" category="inline-link-rx"></block>Consulte para modificar as definições do fornecedor de SAN.</block>
   <block id="b20ccd4ba538ec482298b894f6a0437e" category="summary">Você deve configurar os sistemas de armazenamento antes de executar o Storage Replication Adapter (SRA) para o VMware Live Site Recovery.</block>
   <block id="97daabed54f11ac04f0838fb633676b3" category="doc">Configurar o SRA para ambientes SAN e nas</block>
   <block id="c031f6f2a8dcb171b23de55cec95fc3a" category="paragraph">Você deve configurar os sistemas de armazenamento antes de executar o Storage Replication Adapter (SRA) para o VMware Live Site Recovery.</block>
@@ -1754,7 +1727,6 @@
   <block id="f222eba86de49df529ce1b0bd8136570" category="paragraph">Você deve ter os seguintes programas instalados no site protegido e no site de recuperação:</block>
   <block id="84dd7fb9943b147c95a8074d22954775" category="paragraph">A documentação sobre a instalação do VMware Live Site Recovery está no site da VMware.</block>
   <block id="4de2c2cc8da509c592b09bc5114c2360" category="inline-link">Sobre o VMware Live Site Recovery</block>
-  <block id="226122417d676e2efbf655efab869e69" category="paragraph"><block ref="226122417d676e2efbf655efab869e69" category="inline-link-rx"></block></block>
   <block id="406292f3c5b20715e348f48fa5e6d6e3" category="list-text">SRA</block>
   <block id="7285a921f077fca33245569e2e0b7b8d" category="paragraph">O adaptador é instalado no VMware Live Site Recovery.</block>
   <block id="39d642e40fbcd108eb0ab15715ee349d" category="list-text">Verifique se os hosts ESXi primários estão conetados aos LUNs no sistema de armazenamento primário no local protegido.</block>
@@ -1962,7 +1934,6 @@
   <block id="2298090c8808f9e231d33a417e9f8fda" category="cell">A atualização de recursos em nós secundários falhou</block>
   <block id="1ca37d27a58b0a0a35fd38c8f42f39fc" category="admonition">As ferramentas do ONTAP para VMware vSphere 10,3 são compatíveis com RPO zero.</block>
   <block id="637e3e9060e7aa86bd132537a49fef7c" category="inline-link">Como restaurar as ferramentas do ONTAP para VMware vSphere se a atualização falhar da versão 10,0 para a 10,1</block>
-  <block id="53919574400a28fb0fcafa5fe9603b7e" category="paragraph">Saiba mais sobre<block ref="9befe92b354bb60a7e3304c392ee484a" category="inline-link-rx"></block></block>
   <block id="b5e39b37a2c811e88e1f07aa15f0ba15" category="summary">A atualização é compatível com implantações de HA e não HA.</block>
   <block id="53fa6655b37323ab66a83f1beb9f66c1" category="paragraph">A atualização é compatível com implantações de HA e não HA. Os caminhos de atualização suportados são:</block>
   <block id="b82f42f52ac5fdc3e618aefefe8a32c4" category="cell">Das ferramentas do ONTAP para a configuração do VMware vSphere 10,1 e 10,2</block>
@@ -2228,7 +2199,6 @@
   <block id="a1d7bef497585c5e3e0761a58c9192df" category="paragraph">Isso garante a conformidade com o modelo hierárquico.</block>
   <block id="9d7e0542459b60f98e1d8529e2c87e4e" category="paragraph-title">Tópicos relacionados</block>
   <block id="19dea799245ee5cf6e758f51c6b46e67" category="inline-link">Sobre os grupos</block>
-  <block id="9ec090c0889f67a04d8d16ec3fc894af" category="paragraph"><block ref="9ec090c0889f67a04d8d16ec3fc894af" category="inline-link-rx"></block></block>
   <block id="bd4308f8ba5f92aa81fb16563206441d" category="section-title">Políticas de exportação</block>
   <block id="483d357ed85943a2600f4700b4234595" category="paragraph">As políticas de exportação controlam o acesso aos datastores NFS nas ferramentas ONTAP para VMware vSphere. Elas definem quais clientes podem acessar os datastores e quais permissões eles têm. As políticas de exportação são criadas e gerenciadas em sistemas ONTAP e podem ser associadas aos datastores NFS para impor o controle de acesso. Cada política de exportação consiste em regras que especificam os clientes (endereços IP ou sub-redes) que têm acesso e as permissões concedidas (somente leitura ou leitura/gravação).</block>
   <block id="df454efba6089b22bf497aa6bdafcce9" category="paragraph">Ao criar um repositório de dados NFS nas ferramentas ONTAP para VMware vSphere, você pode selecionar uma política de exportação existente ou criar uma nova. A política de exportação é então aplicada ao repositório de dados, garantindo que apenas clientes autorizados possam acessá-lo.</block>
@@ -2236,7 +2206,6 @@
   <block id="52faf43c83a97dd583b56f8fd4367598" category="paragraph">Ao excluir ou desmontar um repositório de dados NFS de um host ESXi, o ONTAP Tools for VMware vSphere remove o endereço IP do host da política de exportação. Se nenhum outro host estiver usando essa política de exportação, ela será excluída. Ao excluir um repositório de dados NFS, o ONTAP Tools for VMware vSphere remove a política de exportação associada a esse repositório de dados se ela não for reutilizada por outros repositórios de dados. Se a política de exportação for reutilizada, ela manterá o endereço IP do host e permanecerá inalterada. Ao excluir os repositórios de dados, a política de exportação desatribui o endereço IP do host e atribui uma política de exportação padrão, para que os sistemas ONTAP possam acessá-los, se necessário.</block>
   <block id="064bdf085906b78017207e105ea1456c" category="paragraph">A atribuição da política de exportação difere quando ela é reutilizada em diferentes repositórios de dados. Ao reutilizar a política de exportação, você pode anexá-la ao novo endereço IP do host. Ao excluir ou desmontar um repositório de dados que usa uma política de exportação compartilhada, a política não será excluída. Ela permanece inalterada e o endereço IP do host não é removido, pois é compartilhado com os outros repositórios de dados. A reutilização de políticas de exportação não é recomendada, pois pode levar a problemas de acesso e latência.</block>
   <block id="bb53c6c29f127a298da7dd86bf00bb89" category="inline-link">Crie uma política de exportação</block>
-  <block id="c7196e0d279885126e6f1c8cf1f7195f" category="paragraph"><block ref="c7196e0d279885126e6f1c8cf1f7195f" category="inline-link-rx"></block></block>
   <block id="81ee8f71716710530978c5d35f28e92b" category="doc">Migrar das ferramentas do ONTAP para o VMware vSphere 9.xx para o 10,3</block>
   <block id="188f30594923570222a6f1488e852e69" category="paragraph">Mover as ferramentas NetApp ONTAP para a configuração do VMware vSphere da versão 9.xx para a 10.x exige um processo de migração devido às atualizações e melhorias significativas do produto entre as versões.</block>
   <block id="8b6081846f56ef049557c82e5b444e2d" category="paragraph">Se você tiver datastores NFS e VMFS e nenhum datastores vVols em sua configuração, basta desinstalar o ONTAP Tools 9.xx e implantar o ONTAP Tools 10.x. No entanto, se sua configuração contiver datastores vVols, você terá que passar por um processo de migração do VASA Provider e do SRA.</block>
@@ -2245,11 +2214,9 @@
   <block id="122962cdef914297e7bd27106c4b08ef" category="cell">*Se a configuração contiver apenas armazenamentos de dados NFS e VMFS*</block>
   <block id="23582373a176f3a1391b91644579b591" category="inline-link-macro">Migrar o provedor VASA</block>
   <block id="6e4d49fbd70ad4839257ed5ced55d275" category="inline-link">Criar políticas de armazenamento de VM</block>
-  <block id="56e81eec05ba3edf697b5613dfbb8977" category="cell">Etapas: 1. <block ref="393201960d4eefccacb06cc7ccdc8cfc" category="inline-link-macro-rx"></block> 2. <block ref="2f4f76d1186f7e1931e429142840bca6" category="inline-link-rx"></block></block>
   <block id="e07adc488f8e869e6267c0f7a1ccee08" category="inline-link-macro">Implantar e configurar ferramentas ONTAP para VMware vSphere 10.3</block>
   <block id="690fca4891ecdd9975fe5dc5bd2a520b" category="inline-link-macro">Atualize o SRA</block>
   <block id="ae2e6f54444edfbcea323e8f64be5184" category="inline-link">Como remover o OTV 9.xx do seu ambiente</block>
-  <block id="84645f58bac1a3ef293c7f9fa8c6c989" category="cell">Etapas: 1. Remova as ferramentas ONTAP 9.xx do seu ambiente. Consulte <block ref="9bde8c27ff3ba526e74c5e0434eb2686" category="inline-link-rx"></block> Artigo da Base de conhecimento da NetApp. 2. <block ref="ed7f206c59f60e7024e5e58e1da041e1" category="inline-link-macro-rx"></block> 3. <block ref="a29d94f131e388c7ee7c4a56d062be87" category="inline-link-macro-rx"></block> 4. <block ref="2f4f76d1186f7e1931e429142840bca6" category="inline-link-rx"></block></block>
   <block id="4639c1f094e9032d39d96a62ddb513a1" category="admonition">Depois de migrar das ferramentas do ONTAP para o VMware vSphere 9.xx para o 10,3, os armazenamentos de dados vVols que usam o protocolo NVMe/FC tornam-se não operacionais porque o ONTAP Tools 10,3 oferece suporte ao protocolo NVMe-of somente com datastores VMFS.</block>
   <block id="3d73385f16fa6d4daf757e66c8eab31b" category="doc">Migrar o Provedor VASA e atualizar o SRA</block>
   <block id="74a0fcc4fbe41d518dabd4de3a069584" category="section-title">Etapas para migrar o provedor VASA</block>
@@ -2270,4 +2237,37 @@
   <block id="a928a1b805644ea87a643f7f8d60a477" category="list-text">Na página principal da VM, selecione *Ações* &gt; *Editar configurações*. Para identificar o nome da máquina virtual principal:</block>
   <block id="75a86edd37c9b2122be450b28fa09149" category="list-text">Ative o shell de diagnóstico em qualquer nó.</block>
   <block id="e016d50ae26af4214e6a864c1c2c8db5" category="list-text">Execute o seguinte comando:<block ref="1ebe86b64a17c55ae52f4488cffae75f" prefix=" " category="inline-code"></block></block>
+  <block id="0ebfa7835af8957134c728f9f6f3f4b7" category="paragraph">Os novos NetApp sistemas ASA r2 oferecem uma solução unificada de hardware e software que cria uma experiência simplificada específica para as necessidades de clientes que utilizam apenas SAN<block ref="690751518564c3e3ed9149f0b0634eb9" category="inline-link-rx"></block>.</block>
+  <block id="f7e18906958fcaafcc3fa03a33f98f85" category="paragraph">Um grupo de consistência é uma coleção de volumes gerenciados como uma única unidade. No ONTAP, os grupos de consistência oferecem gerenciamento simplificado e garantia de proteção para cargas de trabalho de aplicativos que abrangem vários volumes. Saiba mais sobre<block ref="21720e10054c36c58da53cbc0d8af897" category="inline-link-rx"></block>.</block>
+  <block id="d013eba23f94275412e595f126e80e11" category="paragraph">SnapMirror active sync permite que os serviços empresariais continuem operando mesmo em caso de falha do local, possibilitando que as aplicações sejam transferidas de forma transparente usando uma cópia secundária. Não é necessária intervenção manual nem scripts personalizados para acionar um failover com SnapMirror active sync. Saiba mais<block ref="e99fec139a7262abe005a80b2bd23494" category="inline-link-rx"></block>.</block>
+  <block id="ccefdf08fc085a6a182c11bc463bce05" category="paragraph">vSphere Metro Storage Cluster (vMSC) é uma tecnologia que permite e oferece suporte ao vSphere em uma implementação de cluster estendido. As soluções vMSC são compatíveis com NetApp MetroCluster e SnapMirror active sync (anteriormente SMBC). Essas soluções proporcionam maior continuidade dos negócios em caso de falha do domínio. O modelo de resiliência é baseado nas suas escolhas de configuração específicas. Saiba mais sobre<block ref="48734d32433b9106d4e8d29819a8bf8d" category="inline-link-rx"></block>.</block>
+  <block id="a2419c017619a549acd6f2530bb9a0b2" category="list-text">Analise o<block ref="fab0a0c785d370622362020e2f3ed7e1" category="inline-link-rx"></block></block>
+  <block id="49970ae4f51b116be76099bb02e9d7f0" category="list-text">Ao usar o VMware vSphere 7 release, siga as instruções no site da VMware<block ref="eab294bafd92df9bf2deabd866fbb94e" category="inline-link-rx"></block> para configurar a vinculação de porta NVMe/TCP. Ao usar o VMware vSphere 8 release, siga<block ref="ce884e3a0fe052a45a8d26decd35908d" category="inline-link-rx"></block>, para configurar a vinculação de porta NVMe/TCP.</block>
+  <block id="9ebb99237f93010d919393bd82ca3cf3" category="list-text">Para o lançamento do VMware vSphere 7, siga as instruções na página<block ref="675dfd3f40f557794f4da0382e91be20" category="inline-link-rx"></block> para configurar os adaptadores de software NVMe/TCP. Para o lançamento do VMware vSphere 8, siga<block ref="359ca50dab1d63e1c37b0e9aa7f69328" category="inline-link-rx"></block> para configurar os adaptadores de software NVMe/TCP.</block>
+  <block id="666dbb89f7307770629c19db67953504" category="list-text">Execute a ação <block ref="c076a6b54534640d64418e3f25ccabbb" category="inline-link-macro-rx"></block> no host ESXi. Para obter mais informações, consulte <block ref="7d8be8ab6f925d44e6096143b50930eb" category="inline-link-rx"></block>.</block>
+  <block id="1250632adcebb5fdde746f68f5f5d1ab" category="paragraph">Para configurar uma SVM do ONTAP para o protocolo FC, consulte <block ref="9a85cf35d1c576c50eca5d001fed7770" category="inline-link-rx"></block>.</block>
+  <block id="9a2c5be73de128ee1c042576f0081228" category="paragraph">Para obter mais informações sobre como usar o protocolo NVMe/FC com VMware vSphere 8.0, consulte <block ref="5db8b1ba8249e6aa04254bfda3e03cad" category="inline-link-rx"></block>.</block>
+  <block id="dd7acf96403efe96c19052c3b7b43696" category="paragraph">Para obter mais informações sobre como usar NVMe/FC com VMware vSphere 7.0, consulte <block ref="5b342c912562dcb58ee3f3648204c817" category="inline-link-rx"></block> e <block ref="7a29b2f31035a451d5b068728d2b79a7" category="inline-link-rx"></block>.</block>
+  <block id="dea9ea86828f4eeb20d1d426a67fb54e" category="list-text">Baixe o <block ref="eb8871d084e5444d76435f2f53088444" category="inline-link-rx"></block> pacote de instalação.</block>
+  <block id="cef9325a79cb8ba5e8e01d588772d728" category="paragraph">Para obter mais informações sobre o procedimento, consulte o <block ref="0979244af97101600923fad626326667" category="inline-link-rx"></block>artigo da Knowledge Base.</block>
+  <block id="3155093ff66d6bd7b727ca8a29f56ab8" category="paragraph"><block ref="3155093ff66d6bd7b727ca8a29f56ab8" category="inline-link-rx"></block></block>
+  <block id="f1907e20513f7bb4ea182cca75f0aed2" category="paragraph"><block ref="f1907e20513f7bb4ea182cca75f0aed2" category="inline-link-rx"></block></block>
+  <block id="79243f65b79e1b12d46d32fe60dec3e4" category="paragraph"><block ref="79243f65b79e1b12d46d32fe60dec3e4" category="inline-link-rx"></block></block>
+  <block id="5bd7fe6097d53ac9c62244a418b63dbc" category="admonition">Para obter mais informações, consulte o <block ref="5ac8aad7c73fc01a6f28f1691f6e06ac" category="inline-link-rx"></block>blog.</block>
+  <block id="bf03efd31ac438425877fd4bc8b4eef4" category="paragraph">Para obter mais informações, consulte <block ref="42199334b2c242adc6a9201ac403b2fe" category="inline-link-rx"></block>.</block>
+  <block id="d5caa506ead3d02e3d955a34946fc9a1" category="list-text">Remova as VMs do vCenter Server. Consulte <block ref="730771976bf8809d0e1b18b2b9db8122" category="inline-link-rx"></block>.</block>
+  <block id="b84dec8796d2b9d30c8cdb27584a58ed" category="list-text">Exclua volumes FlexVol do ONTAP System Manager. Consulte <block ref="63b00100a7db82dcc4d345b61a91b55b" category="inline-link-rx"></block>. No comando da CLI para excluir um volume, forneça o nome exato dos volumes FlexVol.</block>
+  <block id="800997e2326c36eebef372fb3cfac389" category="list-text">Exclua os igroups SAN do sistema de storage ONTAP em caso de implantação iSCSI. Consulte <block ref="e00c70364af63bebff97b0e611aa32d2" category="inline-link-rx"></block>.</block>
+  <block id="aeed495d81e0659adbb52849ad0aaa88" category="paragraph"><block ref="aeed495d81e0659adbb52849ad0aaa88" category="inline-link-rx"></block></block>
+  <block id="2065c7b470f4d228b592158785fc8c0b" category="paragraph"><block ref="2065c7b470f4d228b592158785fc8c0b" category="inline-link-rx"></block></block>
+  <block id="da0317a707b799e20d52a9ed48600a5d" category="paragraph">Consulte<block ref="d715c2f17cf44a9fe16a53988f715a0c" category="inline-link-rx"></block> para mais detalhes.</block>
+  <block id="99ff68e0a5e3eff8350235e4aa349b33" category="list-text">Para remover as máquinas virtuais, consulte<block ref="730771976bf8809d0e1b18b2b9db8122" category="inline-link-rx"></block></block>
+  <block id="2cc4cd106b8b28a2a7a4dc41aab2ccb2" category="list-text">Para movê-los para um armazenamento de dados não gerenciado, consulte<block ref="c6d1808825e9c8d51ec3ee5f99c953bd" category="inline-link-rx"></block></block>
+  <block id="dea491514edb56a330b46ce4403a9ff0" category="cell">Passos: 1. <block ref="393201960d4eefccacb06cc7ccdc8cfc" category="inline-link-macro-rx"></block>2.<block ref="df8c7098182657a68e9193cd3f4cbf10" category="inline-link-rx"></block></block>
+  <block id="f00c083ca28330574bbee60ec74a082c" category="cell">Etapas: 1. Remova as ferramentas ONTAP 9.xx do seu ambiente. Consulte o <block ref="79b3439203bbb78183de845f86175d16" category="inline-link-rx"></block> NetApp artigo da Knowledge Base. 2. <block ref="ed7f206c59f60e7024e5e58e1da041e1" category="inline-link-macro-rx"></block> 3. <block ref="a29d94f131e388c7ee7c4a56d062be87" category="inline-link-macro-rx"></block> 4.<block ref="df8c7098182657a68e9193cd3f4cbf10" category="inline-link-rx"></block></block>
+  <block id="ef16d9c852f6889c906737f47c81fe38" category="paragraph">Você deveria ter baixado o arquivo _tar.gz_ de <block ref="db8756d7f65d6a8e593e69ba45adbb2e" category="inline-link-rx"></block>.</block>
+  <block id="03e2c37f5d8bd2cc63f0d7e7e405c3f7" category="paragraph">Consulte <block ref="b82677954338cf834fb1a7cbfa3683ff" category="inline-link-rx"></block> para obter mais informações sobre como modificar as configurações do Storage Provider.</block>
+  <block id="cc9798c15a976cd5b7bdcf483174a390" category="paragraph">Consulte <block ref="44bb7c66e0bef8f100bbfa7ad4ff5c75" category="inline-link-rx"></block> para modificar as configurações do provedor SAN.</block>
+  <block id="3daf74ebef2f034c4ab4baf59f15dc51" category="paragraph"><block ref="3daf74ebef2f034c4ab4baf59f15dc51" category="inline-link-rx"></block></block>
+  <block id="643c0215c2c7179633d4deb5f3a78c6b" category="paragraph">Saiba mais sobre<block ref="d45262f681072e6d1fc0e869b99c2a10" category="inline-link-rx"></block></block>
 </blocks>

@@ -220,7 +220,7 @@ Durante a migração:
 Isso garante a conformidade com o modelo hierárquico.
 
 .Tópicos relacionados
-https://docs.netapp.com/us-en/ontap/san-admin/igroups-concept.html["Sobre os grupos"]
+https://docs.netapp.com/us-en/ontap/san-admin/igroups-concept.html["Sobre os grupos"^]
 
 
 
@@ -237,4 +237,4 @@ Ao excluir ou desmontar um repositório de dados NFS de um host ESXi, o ONTAP To
 A atribuição da política de exportação difere quando ela é reutilizada em diferentes repositórios de dados. Ao reutilizar a política de exportação, você pode anexá-la ao novo endereço IP do host. Ao excluir ou desmontar um repositório de dados que usa uma política de exportação compartilhada, a política não será excluída. Ela permanece inalterada e o endereço IP do host não é removido, pois é compartilhado com os outros repositórios de dados. A reutilização de políticas de exportação não é recomendada, pois pode levar a problemas de acesso e latência.
 
 .Tópicos relacionados
-https://docs.netapp.com/us-en/ontap/nfs-config/create-export-policy-task.html["Crie uma política de exportação"]
+https://docs.netapp.com/us-en/ontap/nfs-config/create-export-policy-task.html["Crie uma política de exportação"^]

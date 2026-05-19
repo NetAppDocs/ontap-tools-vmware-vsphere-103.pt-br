@@ -14,7 +14,7 @@ summary: 'Depois de implantar o VMware Live Site Recovery Appliance, você deve 
 Depois de implantar o VMware Live Site Recovery Appliance, você deve configurar o SRA no VMware Live Site Recovery Appliance. A configuração bem-sucedida do SRA permite que o VMware Live Site Recovery Appliance se comunique com o SRA para gerenciamento de recuperação de desastres. Você deve armazenar as ferramentas do ONTAP para credenciais do VMware vSphere (endereço IP) no dispositivo VMware Live Site Recovery para permitir a comunicação entre o VMware Live Site Recovery Appliance e o SRA.
 
 .Antes de começar
-Você deve ter baixado o arquivo _tar.gz_ do https://mysupport.netapp.com/site/products/all/details/otv10/downloads-tab["Site de suporte da NetApp"].
+Você deveria ter baixado o arquivo _tar.gz_ de  https://mysupport.netapp.com/site/products/all/details/otv10/downloads-tab["Site de suporte da NetApp"^].
 
 *Sobre esta tarefa*
 

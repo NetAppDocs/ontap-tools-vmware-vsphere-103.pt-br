@@ -158,4 +158,4 @@ Os últimos três dígitos do código de erro indicam o erro de fluxo de trabalh
 
 NOTE: As ferramentas do ONTAP para VMware vSphere 10,3 são compatíveis com RPO zero.
 
-Saiba mais sobre https://kb.netapp.com/data-mgmt/OTV/VSC_Kbs/How_to_restore_ONTAP_tools_for_VMware_vSphere_if_upgrade_fails_from_version_10.0_to_10.1["Como restaurar as ferramentas do ONTAP para VMware vSphere se a atualização falhar da versão 10,0 para a 10,1"]
+Saiba mais sobre https://kb.netapp.com/data-mgmt/OTV/VSC_Kbs/How_to_restore_ONTAP_tools_for_VMware_vSphere_if_upgrade_fails_from_version_10.0_to_10.1["Como restaurar as ferramentas do ONTAP para VMware vSphere se a atualização falhar da versão 10,0 para a 10,1"^]

@@ -25,7 +25,7 @@ Se for uma implantação iSCSI, você precisa excluir os grupos também.
 +
 _Kubectl descreva persistentvolumes | grep internalName | awk -F' ''print 2'_
 
-. Remova as VMs do vCenter Server. Consulte a https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-virtual-machine-administration-guide-8-0/managing-virtual-machinesvsphere-vm-admin/adding-and-removing-virtual-machinesvsphere-vm-admin.html#GUID-376174FE-F936-4BE4-B8C2-48EED42F110B-en["Remover e Registrar novamente VMs e modelos de VM"].
-. Excluir volumes FlexVol do Gerenciador de sistema do ONTAP. Consulte a https://docs.netapp.com/us-en/ontap/volumes/delete-flexvol-task.html["Eliminar um FlexVol volume"]. No comando CLI para excluir um volume, forneça o nome exato dos volumes FlexVol.
-. Excluir grupos SAN do sistema de armazenamento ONTAP em caso de implantação iSCSI. Consulte a https://docs.netapp.com/us-en/ontap/san-admin/manage-san-initiators-task.html["Visualizar e gerenciar iniciadores e grupos SAN"].
+. Remova as VMs do vCenter Server. Consulte  https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-virtual-machine-administration-guide-8-0/managing-virtual-machinesvsphere-vm-admin/adding-and-removing-virtual-machinesvsphere-vm-admin.html#GUID-376174FE-F936-4BE4-B8C2-48EED42F110B-en["Remover e Registrar novamente VMs e modelos de VM"^].
+. Exclua volumes FlexVol do ONTAP System Manager. Consulte  https://docs.netapp.com/us-en/ontap/volumes/delete-flexvol-task.html["Eliminar um FlexVol volume"^]. No comando da CLI para excluir um volume, forneça o nome exato dos volumes FlexVol.
+. Exclua os igroups SAN do sistema de storage ONTAP em caso de implantação iSCSI. Consulte  https://docs.netapp.com/us-en/ontap/san-admin/manage-san-initiators-task.html["Visualizar e gerenciar iniciadores e grupos SAN"^].
 

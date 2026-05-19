@@ -96,16 +96,16 @@ Num cluster protegido:
 * Mapear o SVM para agregar usuário do SVM no sistema de storage ASA R2.
 * Configure o host ESXi se estiver usando o protocolo NVMe/TCP:
 +
-.. Reveja o. https://www.vmware.com/resources/compatibility/detail.php?deviceCategory=san&productid=49677&releases_filter=589,578,518,508,448&deviceCategory=san&details=1&partner=399&Protocols=1&transportTypes=3&isSVA=0&page=1&display_interval=10&sortColumn=Partner&sortOrder=Asc["Guia de compatibilidade da VMware"]
+.. Analise o https://www.vmware.com/resources/compatibility/detail.php?deviceCategory=san&productid=49677&releases_filter=589,578,518,508,448&deviceCategory=san&details=1&partner=399&Protocols=1&transportTypes=3&isSVA=0&page=1&display_interval=10&sortColumn=Partner&sortOrder=Asc["Guia de compatibilidade da VMware"^]
 +
 
 NOTE: O VMware vSphere 7,0 U3 e versões posteriores são compatíveis com o protocolo NVMe/TCP. No entanto, o VMware vSphere 8,0 e a versão posterior são recomendados.
 
 .. Valide se o fornecedor da placa de interface de rede (NIC) suporta NIC ESXi com protocolo NVMe/TCP.
 .. Configure a NIC ESXi para NVMe/TCP de acordo com as especificações do fornecedor da NIC.
-.. Ao usar a versão do VMware vSphere 7, siga as instruções no site da VMware https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/7-0/vsphere-storage-7-0/about-vmware-nvme-storage/configure-adapters-for-nvme-over-tcp-storage/configure-vmkernel-binding-for-the-tcp-adapter.html["Configure a vinculação VMkernel para o adaptador NVMe sobre TCP"] para configurar a vinculação de portas NVMe/TCP. Ao usar a versão do VMware vSphere 8, siga https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-storage-8-0/about-vmware-nvme-storage/configuring-nvme-over-tcp-on-esxi.html["Configurando o NVMe em TCP no ESXi"]o , para configurar a vinculação de porta NVMe/TCP.
-.. Para a versão do VMware vSphere 7, siga as instruções na página https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/7-0/vsphere-storage-7-0/about-vmware-nvme-storage/add-software-nvme-over-rdma-or-nvme-over-tcp-adapters.html["Habilite o NVMe em adaptadores de software RDMA ou NVMe em TCP"] para configurar adaptadores de software NVMe/TCP. Para a versão do VMware vSphere 8, siga https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-storage-8-0/about-vmware-nvme-storage/configuring-nvme-over-rdma-roce-v2-on-esxi/add-software-nvme-over-rdma-or-nvme-over-tcp-adapters.html["Adicionar software NVMe em adaptadores RDMA ou NVMe em TCP"] para configurar os adaptadores de software NVMe/TCP.
-.. Execute link:../configure/discover-storage-systems-and-hosts.html["Descubra sistemas de storage e hosts"] uma ação no host ESXi. Para obter mais informações, https://community.netapp.com/t5/Tech-ONTAP-Blogs/How-to-Configure-NVMe-TCP-with-vSphere-8-0-Update-1-and-ONTAP-9-13-1-for-VMFS/ba-p/445429["Como configurar o NVMe/TCP com o vSphere 8,0 Update 1 e o ONTAP 9.13,1 para datastores VMFS"] consulte .
+.. Ao usar o VMware vSphere 7 release, siga as instruções no site da VMware https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/7-0/vsphere-storage-7-0/about-vmware-nvme-storage/configure-adapters-for-nvme-over-tcp-storage/configure-vmkernel-binding-for-the-tcp-adapter.html["Configure a vinculação VMkernel para o adaptador NVMe sobre TCP"^] para configurar a vinculação de porta NVMe/TCP. Ao usar o VMware vSphere 8 release, siga https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-storage-8-0/about-vmware-nvme-storage/configuring-nvme-over-tcp-on-esxi.html["Configurando o NVMe em TCP no ESXi"^], para configurar a vinculação de porta NVMe/TCP.
+.. Para o lançamento do VMware vSphere 7, siga as instruções na página https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/7-0/vsphere-storage-7-0/about-vmware-nvme-storage/add-software-nvme-over-rdma-or-nvme-over-tcp-adapters.html["Habilite o NVMe em adaptadores de software RDMA ou NVMe em TCP"^] para configurar os adaptadores de software NVMe/TCP. Para o lançamento do VMware vSphere 8, siga https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/vsphere-storage-8-0/about-vmware-nvme-storage/configuring-nvme-over-rdma-roce-v2-on-esxi/add-software-nvme-over-rdma-or-nvme-over-tcp-adapters.html["Adicionar software NVMe em adaptadores RDMA ou NVMe em TCP"^] para configurar os adaptadores de software NVMe/TCP.
+.. Execute a ação link:../configure/discover-storage-systems-and-hosts.html["Descubra sistemas de storage e hosts"] no host ESXi. Para obter mais informações, consulte  https://community.netapp.com/t5/Tech-ONTAP-Blogs/How-to-Configure-NVMe-TCP-with-vSphere-8-0-Update-1-and-ONTAP-9-13-1-for-VMFS/ba-p/445429["Como configurar o NVMe/TCP com o vSphere 8,0 Update 1 e o ONTAP 9.13,1 para datastores VMFS"^].
 
 
 * Se você estiver usando o protocolo NVMe/FC, execute as seguintes etapas para configurar o host ESXi:
@@ -117,11 +117,11 @@ NOTE: O VMware vSphere 7,0 U3 e versões posteriores são compatíveis com o pro
 
 
 
-Para configurar um protocolo ONTAP SVM para FC, https://docs.netapp.com/us-en/ontap/san-admin/configure-svm-fc-task.html["Configurar um SVM para FC"] consulte .
+Para configurar uma SVM do ONTAP para o protocolo FC, consulte  https://docs.netapp.com/us-en/ontap/san-admin/configure-svm-fc-task.html["Configurar um SVM para FC"^].
 
-Para obter mais informações sobre como usar o protocolo NVMe/FC com o VMware vSphere 8,0, https://docs.netapp.com/us-en/ontap-sanhost/nvme_esxi_8.html["Configuração de host NVMe-of para ESXi 8.x com ONTAP"] consulte .
+Para obter mais informações sobre como usar o protocolo NVMe/FC com VMware vSphere 8.0, consulte  https://docs.netapp.com/us-en/ontap-sanhost/nvme_esxi_8.html["Configuração de host NVMe-of para ESXi 8.x com ONTAP"^].
 
-Para obter mais informações sobre como usar o NVMe/FC com o VMware vSphere 7,0, https://docs.netapp.com/us-en/ontap-sanhost/nvme_esxi_8.html["Guia de configuração de host ONTAP NVMe/FC"] consulte e http://www.netapp.com/us/media/tr-4684.pdf["TR-4684"].
+Para obter mais informações sobre como usar NVMe/FC com VMware vSphere 7.0, consulte  https://docs.netapp.com/us-en/ontap-sanhost/nvme_esxi_8.html["Guia de configuração de host ONTAP NVMe/FC"^] e  http://www.netapp.com/us/media/tr-4684.pdf["TR-4684"^].
 
 .Passos
 . Faça login no cliente vSphere.
