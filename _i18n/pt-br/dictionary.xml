@@ -1552,7 +1552,6 @@
   <block id="23829b8d6575f7cd3e20a5e92b475a9e" category="doc">Desinstale as ferramentas do ONTAP para o VMware vSphere</block>
   <block id="f54e212052df635bcc70d25302fd583e" category="paragraph">A desinstalação das ferramentas do ONTAP para VMware vSphere exclui todos os dados das ferramentas.</block>
   <block id="82a00fc1c0ae6d437f6d942c64bee898" category="list-text">Remova ou mova todas as máquinas virtuais das ferramentas do ONTAP para armazenamentos de dados gerenciados do VMware vSphere.</block>
-  <block id="41e0fa10828ee2d85cfd4c0ff833ac64" category="inline-link">Storage vMotion</block>
   <block id="f0833ce92c23eb056dde238669740988" category="list-text"><block ref="523efdef8100699453c6b07ce8f4921c" category="inline-link-macro-rx"></block> Criado nas ferramentas do ONTAP para VMware vSphere.</block>
   <block id="1d920979688b28c7b10ef84d14436f95" category="list-text">Se você ativou o provedor VASA, selecione *Configurações* &gt; *Configurações do provedor VASA* &gt; *DesRegistrar* nas ferramentas do ONTAP para cancelar o Registro dos provedores VASA de todos os servidores vCenter.</block>
   <block id="02a713a12e2b216b65a52896d0728a0a" category="list-text">Desassocie todos os backends de armazenamento da instância do vCenter Server. <block ref="8f766e539ddb39a7c07c0c84dded1670" category="inline-link-macro-rx"></block>Consulte a .</block>
@@ -1987,8 +1986,6 @@
   <block id="399a5cfe88876e091f96014da7798994" category="list-text">Na interface de usuário do Gerenciador de sistema do ONTAP, pesquise o volume pelo nome na barra de pesquisa e abra esse volume selecionando no nome. Vá para snapshot e adicione o snapshot desse volume.</block>
   <block id="a780a238f22a802c24a2182aea27323f" category="paragraph">*Faça o snapshot das ferramentas do ONTAP para VMs VMware vSphere no vCenter (3VMs no caso de implantação HA, 1 VMs no caso de implantação não HA)*</block>
   <block id="c3710cf1c44da535612cf08236cee98f" category="list-text">Na interface de usuário do cliente vSphere, selecione a VM.</block>
-  <block id="a6d135b70268e6dae6e2414dc9c7e465" category="inline-link">Tire um instantâneo de uma máquina virtual</block>
-  <block id="ed05024ef185f71f630610fa2998b97c" category="list-text">Vá para a guia instantâneos e selecione o botão *tirar instantâneo*. Faça um snapshot bloqueado da VM. <block ref="cfbcb02d8f4029fded9e80960c9fdffc" category="inline-link-rx"></block>Consulte para obter detalhes.</block>
   <block id="07cf559ee7bbc8841180f1dd59c2917f" category="paragraph">Antes de executar a atualização, exclua os pods concluídos do pacote de log com o prefixo "gerar suporte-pacote-job". Se a geração de pacotes de suporte estiver em andamento, aguarde que ela seja concluída e exclua o pod.</block>
   <block id="7817c7412ad536f5c02bd959934f66d5" category="paragraph">Para qualquer tipo de atualização, você precisa adicionar uma unidade de disco rígido (HDD) adicional de 100 GB. Para adicionar um disco rígido, execute a seguinte tarefa.</block>
   <block id="11873b433682caa870371cc1631ef90f" category="list-text">Selecione a VM na configuração de nó único ou todas as três VMs na configuração de HA.</block>
@@ -2247,7 +2244,6 @@
   <block id="666dbb89f7307770629c19db67953504" category="list-text">Execute a ação <block ref="c076a6b54534640d64418e3f25ccabbb" category="inline-link-macro-rx"></block> no host ESXi. Para obter mais informações, consulte <block ref="7d8be8ab6f925d44e6096143b50930eb" category="inline-link-rx"></block>.</block>
   <block id="1250632adcebb5fdde746f68f5f5d1ab" category="paragraph">Para configurar uma SVM do ONTAP para o protocolo FC, consulte <block ref="9a85cf35d1c576c50eca5d001fed7770" category="inline-link-rx"></block>.</block>
   <block id="9a2c5be73de128ee1c042576f0081228" category="paragraph">Para obter mais informações sobre como usar o protocolo NVMe/FC com VMware vSphere 8.0, consulte <block ref="5db8b1ba8249e6aa04254bfda3e03cad" category="inline-link-rx"></block>.</block>
-  <block id="dd7acf96403efe96c19052c3b7b43696" category="paragraph">Para obter mais informações sobre como usar NVMe/FC com VMware vSphere 7.0, consulte <block ref="5b342c912562dcb58ee3f3648204c817" category="inline-link-rx"></block> e <block ref="7a29b2f31035a451d5b068728d2b79a7" category="inline-link-rx"></block>.</block>
   <block id="dea9ea86828f4eeb20d1d426a67fb54e" category="list-text">Baixe o <block ref="eb8871d084e5444d76435f2f53088444" category="inline-link-rx"></block> pacote de instalação.</block>
   <block id="cef9325a79cb8ba5e8e01d588772d728" category="paragraph">Para obter mais informações sobre o procedimento, consulte o <block ref="0979244af97101600923fad626326667" category="inline-link-rx"></block>artigo da Knowledge Base.</block>
   <block id="3155093ff66d6bd7b727ca8a29f56ab8" category="paragraph"><block ref="3155093ff66d6bd7b727ca8a29f56ab8" category="inline-link-rx"></block></block>
@@ -2262,7 +2258,6 @@
   <block id="2065c7b470f4d228b592158785fc8c0b" category="paragraph"><block ref="2065c7b470f4d228b592158785fc8c0b" category="inline-link-rx"></block></block>
   <block id="da0317a707b799e20d52a9ed48600a5d" category="paragraph">Consulte<block ref="d715c2f17cf44a9fe16a53988f715a0c" category="inline-link-rx"></block> para mais detalhes.</block>
   <block id="99ff68e0a5e3eff8350235e4aa349b33" category="list-text">Para remover as máquinas virtuais, consulte<block ref="730771976bf8809d0e1b18b2b9db8122" category="inline-link-rx"></block></block>
-  <block id="2cc4cd106b8b28a2a7a4dc41aab2ccb2" category="list-text">Para movê-los para um armazenamento de dados não gerenciado, consulte<block ref="c6d1808825e9c8d51ec3ee5f99c953bd" category="inline-link-rx"></block></block>
   <block id="dea491514edb56a330b46ce4403a9ff0" category="cell">Passos: 1. <block ref="393201960d4eefccacb06cc7ccdc8cfc" category="inline-link-macro-rx"></block>2.<block ref="df8c7098182657a68e9193cd3f4cbf10" category="inline-link-rx"></block></block>
   <block id="f00c083ca28330574bbee60ec74a082c" category="cell">Etapas: 1. Remova as ferramentas ONTAP 9.xx do seu ambiente. Consulte o <block ref="79b3439203bbb78183de845f86175d16" category="inline-link-rx"></block> NetApp artigo da Knowledge Base. 2. <block ref="ed7f206c59f60e7024e5e58e1da041e1" category="inline-link-macro-rx"></block> 3. <block ref="a29d94f131e388c7ee7c4a56d062be87" category="inline-link-macro-rx"></block> 4.<block ref="df8c7098182657a68e9193cd3f4cbf10" category="inline-link-rx"></block></block>
   <block id="ef16d9c852f6889c906737f47c81fe38" category="paragraph">Você deveria ter baixado o arquivo _tar.gz_ de <block ref="db8756d7f65d6a8e593e69ba45adbb2e" category="inline-link-rx"></block>.</block>
@@ -2270,4 +2265,8 @@
   <block id="cc9798c15a976cd5b7bdcf483174a390" category="paragraph">Consulte <block ref="44bb7c66e0bef8f100bbfa7ad4ff5c75" category="inline-link-rx"></block> para modificar as configurações do provedor SAN.</block>
   <block id="3daf74ebef2f034c4ab4baf59f15dc51" category="paragraph"><block ref="3daf74ebef2f034c4ab4baf59f15dc51" category="inline-link-rx"></block></block>
   <block id="643c0215c2c7179633d4deb5f3a78c6b" category="paragraph">Saiba mais sobre<block ref="d45262f681072e6d1fc0e869b99c2a10" category="inline-link-rx"></block></block>
+  <block id="57804fdd8ba31e5051758224c22549a1" category="paragraph">Para obter mais informações sobre como usar NVMe/FC com VMware vSphere 7.0, consulte <block ref="5b342c912562dcb58ee3f3648204c817" category="inline-link-rx"></block> e <block ref="25f6eb92bf39f9dbaabe4b65d71fa8c4" category="inline-link-rx"></block>.</block>
+  <block id="ae0aa1a81eb18e69d5fc662eaee0efd5" category="inline-link">Documentação técnica Broadcom</block>
+  <block id="ea979d9a9cddfcb001c2c7866c21bc62" category="list-text">Para movê-los para um datastore não gerenciado, consulte <block ref="94f03a61d7283013b50d8cc8e88c9fd8" category="inline-link-rx"></block>.</block>
+  <block id="04b5525fb0dd70ed32ea9bb7a57dfaf6" category="list-text">Vá até a aba de snapshots e selecione o botão *Take Snapshot*. Tire um snapshot quiescido da VM. Consulte <block ref="94f03a61d7283013b50d8cc8e88c9fd8" category="inline-link-rx"></block> para obter detalhes.</block>
 </blocks>

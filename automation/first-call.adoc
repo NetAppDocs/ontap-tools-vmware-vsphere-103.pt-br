@@ -18,6 +18,7 @@ Você pode emitir uma chamada de API usando o curl para começar a usar as ferra
 
 
 
+[[before-you-begin]]
 == Antes de começar
 
 Você deve rever as informações e os parâmetros necessários nos exemplos curl.
@@ -58,6 +59,7 @@ echo $FQDN_IP
 ----
 
 
+[[step-1-acquire-an-access-token]]
 == Passo 1: Adquira um token de acesso
 
 Você precisa adquirir um token de acesso para usar a API REST. Um exemplo de como solicitar um token de acesso é apresentado abaixo. Você deve substituir os valores apropriados para o seu ambiente.
@@ -74,6 +76,7 @@ Copie e salve o token de acesso fornecido na resposta.
 
 
 
+[[step-2-issue-the-rest-api-call]]
 == Etapa 2: Emita a chamada da API REST
 
 Depois de ter um token de acesso, você pode usar o curl para emitir uma chamada de API REST. Inclua o token de acesso adquirido na primeira etapa.

@@ -21,6 +21,7 @@ Você pode executar as seguintes tarefas como parte da proteção de modificaç�
 
 
 
+[[monitor-host-cluster-protection]]
 == Monitorar a proteção do cluster de host
 
 Use este procedimento para monitorar o status da proteção do cluster do host. Você pode monitorar cada cluster de host protegido, juntamente com seu estado de proteção, relacionamentos do SnapMirror, datastores e o status SnapMirror correspondente.
@@ -36,6 +37,7 @@ O ícone sob a coluna de proteção mostra o status da proteção
 
 
 
+[[add-new-datastores-or-hosts]]
 == Adicione novos armazenamentos de dados ou hosts
 
 Use este procedimento para proteger os armazenamentos de dados ou hosts recém-adicionados. Você pode adicionar novos hosts ao cluster protegido ou criar novos datastores no cluster de host usando a interface de usuário nativa do vCenter.
@@ -62,6 +64,7 @@ Uma tarefa do vCenter é criada e você pode acompanhar o progresso no painel *t
 
 
 
+[[add-a-new-snapmirror-relationship]]
 == Adicione uma nova relação do SnapMirror
 
 .Passos
@@ -84,6 +87,7 @@ Uma tarefa do vCenter é criada e você pode acompanhar o progresso no painel *t
 
 
 
+[[delete-an-existing-snapmirror-relationship]]
 == Eliminar uma relação SnapMirror existente
 
 Para excluir uma relação assíncrona do SnapMirror, o SVM ou cluster do local secundário devem ser adicionados como back-end de storage nas ferramentas do ONTAP para VMware vSphere. Não é possível eliminar todas as relações SnapMirror. Quando você exclui um relacionamento, o relacionamento respetivo no cluster do ONTAP também é removido. Quando você exclui uma relação de SnapMirror de failover automático, os armazenamentos de dados no destino não são mapeados e o grupo de consistência, LUNs, volumes e grupos de dados são removidos do cluster do ONTAP de destino.
@@ -105,6 +109,7 @@ Uma tarefa do vCenter é criada e você pode acompanhar o progresso no painel *t
 
 
 
+[[modify-an-existing-snapmirror-relationship]]
 == Modificar uma relação SnapMirror existente
 
 Para modificar uma relação assíncrona do SnapMirror, o SVM ou cluster do local secundário devem ser adicionados como back-end de storage nas ferramentas do ONTAP para VMware vSphere. Se for um relacionamento SnapMirror AutomatedFailOverDuplex, você pode modificar a proximidade do host em caso de configuração uniforme e o acesso do host em caso de configuração não uniforme. Não é possível trocar tipos de política assíncronos e AutomatedFailOverDuplex. Você pode definir a proximidade ou o acesso dos hosts recém-descobertos no cluster.

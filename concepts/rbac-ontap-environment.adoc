@@ -18,6 +18,7 @@ O ONTAP fornece um ambiente RBAC robusto e extensível. Use a funcionalidade RBA
 
 
 
+[[overview-of-the-administrative-options]]
 == Visão geral das opções administrativas
 
 Há várias opções disponíveis ao usar o ONTAP RBAC, dependendo do ambiente e das metas. Uma visão geral das principais decisões administrativas é apresentada abaixo. Consulte também https://docs.netapp.com/us-en/ontap-automation/rest/rbac_overview.html["Automação ONTAP: Visão geral da segurança RBAC"^] para obter mais informações.
@@ -48,6 +49,7 @@ O ONTAP fornece um conjunto de funções pré-definidas no nível do cluster e d
 
 
 
+[[working-with-ontap-rest-roles]]
 == Trabalhando com as funções REST do ONTAP
 
 Há várias considerações ao usar as funções REST do ONTAP incluídas nas ferramentas do ONTAP para VMware vSphere 10.

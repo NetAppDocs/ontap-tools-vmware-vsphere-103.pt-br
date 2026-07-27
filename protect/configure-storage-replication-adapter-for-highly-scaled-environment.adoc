@@ -15,6 +15,7 @@ Você deve configurar os intervalos de tempo de armazenamento de acordo com as c
 
 
 
+[[storage-provider-settings]]
 == Definições do fornecedor de armazenamento
 
 Você deve definir os seguintes valores de tempo limite no VMware Live Site Recovery para ambiente dimensionado:
@@ -58,6 +59,7 @@ Consulte  https://techdocs.broadcom.com/us/en/vmware-cis/live-recovery/live-site
 
 
 
+[[storage-settings]]
 == Definições de armazenamento
 
 Quando você atinge um tempo limite, aumente os valores de `storage.commandTimeout` e `storage.maxConcurrentCommandCnt` para um valor mais alto.

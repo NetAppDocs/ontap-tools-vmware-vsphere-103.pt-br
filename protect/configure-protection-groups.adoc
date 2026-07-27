@@ -15,6 +15,7 @@ Você deve criar grupos de proteção para proteger um grupo de máquinas virtua
 
 
 
+[[configure-protection-groups]]
 == Configurar grupos de proteção
 
 .Antes de começar
@@ -41,6 +42,7 @@ Todas as máquinas virtuais no grupo de replicação são adicionadas ao grupo d
 
 
 
+[[pair-protected-and-recovery-sites]]
 == Emparelhe locais protegidos e de recuperação
 
 Você deve emparelhar os sites protegidos e de recuperação criados usando o vSphere Client para habilitar o Storage Replication Adapter (SRA) para descobrir os sistemas de armazenamento.

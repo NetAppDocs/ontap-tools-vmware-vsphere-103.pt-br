@@ -109,7 +109,7 @@ Execute os seguintes comandos para fazer um backup do MongoDB:
 *Faça o snapshot das ferramentas do ONTAP para VMs VMware vSphere no vCenter (3VMs no caso de implantação HA, 1 VMs no caso de implantação não HA)*
 
 * Na interface de usuário do cliente vSphere, selecione a VM.
-* Vá para a guia instantâneos e selecione o botão *tirar instantâneo*. Faça um snapshot bloqueado da VM.  https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/8-0/take-snapshots-of-a-virtual-machine.html["Tire um instantâneo de uma máquina virtual"^]Consulte para obter detalhes.
+* Vá até a aba de snapshots e selecione o botão *Take Snapshot*. Tire um snapshot quiescido da VM. Consulte  https://techdocs.broadcom.com/["Documentação técnica Broadcom"^] para obter detalhes.
 
 
 Antes de executar a atualização, exclua os pods concluídos do pacote de log com o prefixo "gerar suporte-pacote-job". Se a geração de pacotes de suporte estiver em andamento, aguarde que ela seja concluída e exclua o pod.

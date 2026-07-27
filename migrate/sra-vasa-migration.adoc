@@ -12,6 +12,7 @@ summary: Ao migrar dados de storage, os back-ends de storage são integrados man
 
 
 
+[[steps-to-migrate-the-vasa-provider]]
 == Etapas para migrar o provedor VASA
 
 . Para ativar A PORTA Derby 1527 nas ferramentas existentes do ONTAP para VMware vSphere, ative o usuário raiz e faça login na CLI por meio de SSH. Em seguida, execute o seguinte comando:
@@ -150,6 +151,7 @@ O status de conformidade em *conformidade com a política de armazenamento de VM
 
 
 
+[[steps-to-update-the-storage-replication-adaptorsra]]
 == Etapas para atualizar o adaptador de replicação de armazenamento (SRA)
 
 .Antes de começar

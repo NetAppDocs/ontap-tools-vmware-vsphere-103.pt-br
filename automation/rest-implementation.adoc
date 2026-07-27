@@ -20,6 +20,7 @@ A API REST inclui várias categorias de recursos, como vCenters e agregados. Con
 
 
 
+[[how-to-access-the-rest-api]]
 == Como acessar a API REST
 
 Você pode acessar as ferramentas do ONTAP para a API REST do VMware vSphere 10 por meio do endereço IP do balanceador de carga das ferramentas do ONTAP junto com a porta. Existem várias partes para o URL completo, incluindo:
@@ -47,12 +48,14 @@ Esse URL pode ser usado para solicitar uma lista das instâncias definidas do vC
 
 
 
+[[http-details]]
 == Detalhes HTTP
 
 As ferramentas do ONTAP para a API REST do VMware vSphere 10 usam HTTP e parâmetros relacionados para agir nas instâncias e coleções de recursos. Detalhes da implementação HTTP são apresentados abaixo.
 
 
 
+[[http-methods]]
 === Métodos HTTP
 
 Os métodos HTTP ou verbos suportados pela API REST são apresentados na tabela abaixo.
@@ -78,6 +81,7 @@ Os métodos HTTP ou verbos suportados pela API REST são apresentados na tabela 
 |===
 
 
+[[request-and-response-headers]]
 === Cabeçalhos de solicitação e resposta
 
 A tabela a seguir resume os cabeçalhos HTTP mais importantes usados com a API REST.
@@ -97,6 +101,7 @@ A tabela a seguir resume os cabeçalhos HTTP mais importantes usados com a API R
 |===
 
 
+[[http-status-codes]]
 === Códigos de status HTTP
 
 Os códigos de status HTTP usados pela API REST são descritos abaixo.
@@ -137,6 +142,7 @@ Os códigos de status HTTP usados pela API REST são descritos abaixo.
 |===
 
 
+[[authentication]]
 == Autenticação
 
 A autenticação de um cliente para a API REST é realizada usando um token de acesso. As caraterísticas relevantes do token e do processo de autenticação incluem:
@@ -151,6 +157,7 @@ link:../automation/first-call.html["Sua primeira chamada de API REST"]Consulte p
 
 
 
+[[synchronous-and-asynchronous-requests]]
 == Solicitações síncronas e assíncronas
 
 A maioria das chamadas de API REST são concluídas rapidamente e, portanto, executadas de forma síncrona. Ou seja, eles retornam um código de status (como 200) depois que uma solicitação foi concluída. As solicitações que levam mais tempo para serem concluídas são executadas assincronamente usando um trabalho em segundo plano.

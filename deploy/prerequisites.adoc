@@ -17,6 +17,7 @@ Você pode usar as ferramentas do ONTAP para VMware vSphere com o VMware vCenter
 
 
 
+[[system-requirements]]
 == Requisitos do sistema
 
 * * Requisitos de espaço do pacote de instalação por nó*
@@ -50,6 +51,7 @@ Você pode usar as ferramentas do ONTAP para VMware vSphere com o VMware vCenter
 |===
 
 
+[[minimum-storage-and-application-requirements]]
 == Requisitos mínimos de storage e aplicativos
 
 |===
@@ -76,6 +78,7 @@ https://imt.netapp.com/matrix/imt.jsp?components=105475;&solution=1777&isHWU&src
 
 
 
+[[configuration-limits-to-deploy-ontap-tools-for-vmware-vsphere]]
 == Limites de configuração para implantar as ferramentas do ONTAP para o VMware vSphere
 
 Você pode usar a tabela a seguir como um guia para configurar as ferramentas do ONTAP para o VMware vSphere.
@@ -102,6 +105,7 @@ Você pode usar a tabela a seguir como um guia para configurar as ferramentas do
 |===
 
 
+[[ontap-tools-for-vmware-vsphere-storage-replication-adapter-sra]]
 == Ferramentas do ONTAP para VMware vSphere - adaptador de replicação de armazenamento (SRA)
 
 A tabela a seguir mostra os números suportados por instância do VMware Live Site Recovery usando as ferramentas do ONTAP para VMware vSphere.
@@ -144,6 +148,7 @@ Para obter mais informações, consulte  https://techdocs.broadcom.com/us/en/vmw
 
 
 
+[[port-requirements]]
 == Requisitos portuários
 
 A tabela a seguir descreve as portas de rede que o NetApp usa e seus propósitos. Certifique-se de que estas portas estão abertas e acessíveis para facilitar o funcionamento e a comunicação adequados dentro do sistema. Certifique-se de que as configurações de rede necessárias estão em vigor para permitir que o tráfego nessas portas funcione corretamente. Dependendo das suas políticas de segurança, pode ser necessário configurar firewalls ou outros dispositivos de segurança para permitir esse tráfego na sua rede.
